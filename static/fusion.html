@@ -1,0 +1,396 @@
+<html>
+    <body>
+        <div class="main-container">
+
+        <div>
+        </div>
+        <div class="fusion-content">
+            <div class="fusion-progress">
+                <div class="fusion-status">
+                    <div class="fusion-item-row">
+                        <div class="fusion-subitem">
+                            <span class="fusion-title-font">28</span>
+                            <span class="fusion-sub-font">Total Fusions</span>
+                        </div>
+                        <div class="fusion-subitem">
+                            <span class="fusion-title-font" style="color: rgba(54, 255, 192, 1)">12</span>
+                            <span class="fusion-sub-font">Succesful</span>
+                        </div>
+                    </div>
+                    <div class="fusion-item-row">
+                        <div class="fusion-subitem">
+                            <span class="fusion-title-font">90,2B</span>
+                            <span class="fusion-sub-font">Total Cost</span>
+                        </div>
+                        <div class="fusion-subitem">
+                            <span class="fusion-title-font" style="color: rgba(255, 54, 54, 1)">9</span>
+                            <span class="fusion-sub-font">Failed</span>
+                        </div>
+                    </div>                    
+                    <div class="fusion-item-row">
+                        <div class="fusion-subitem">
+                            <span class="fusion-title-font">28</span>
+                            <span class="fusion-sub-font">Total Fusions</span>
+                        </div>
+                        <div class="fusion-subitem">
+                            <span class="fusion-title-font" style="color: rgba(54, 255, 192, 1)" >12</span>
+                            <span class="fusion-sub-font">Successful</span>
+                        </div>
+                    </div>                                                            
+                    <div class="fusion-item-row">
+                        <div class="fusion-subitem">
+                            <span class="fusion-title-font">90,2B</span>
+                            <span class="fusion-sub-font">Total Cost</span>
+                        </div>
+                        <div class="fusion-subitem">
+                            <span class="fusion-title-font" style="color: rgba(255, 54, 54, 1)">9</span>
+                            <span class="fusion-sub-font">Failed</span>
+                        </div>
+                    </div>                    
+                </div>           
+            </div>
+
+            <div class="fusion-buttons">
+                <div class="fusion-button">
+                    <span  class="fusion-button-text">FUSE GREENPRINTS</span>
+                </div>
+                <div class="fusion-button">
+                    <span  class="fusion-button-text">FUSE ORBS</span>                
+                </div>
+            <div>
+        </div>
+</body>
+</html>
+
+<style>
+    .fusion-content
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .fusion-buttons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+    .fusion-button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32%;
+        height: 48px;
+        margin-top: 47px;
+        border : 4px solid #1E9F80;
+        margin: auto;
+    }
+    .fusion-button-text{
+        justify-content: center;
+        text-align: center;
+        color: white;
+        align-items: center;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .fusion-progress{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .fusion-status{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 5px;
+    }
+    .fusion-item-row{
+        display: flex;
+        flex-direction: column;
+        margin-top: 12px;
+    }
+    .fusion-subitem{
+        margin-left: 12px;
+        margin-top: 12px; 
+        width: 155px;
+        height: 112px;
+        justify-content: center;
+        background: radial-gradient(70.29% 81.68% at 50% 42.42%, #1B202D 0%, #0C0F15 100%);
+        border: 1px solid #343C4D;
+        box-sizing: border-box;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .fusion-title-font{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 26px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .fusion-sub-font{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        color: #FFFFFF;
+        opacity: 0.7;
+    }    
+
+    
+    
+    .path-back{
+        fill: none;
+        stroke: rgba(54, 255, 192, 0.5);
+        stroke-width: 4;   
+    }
+
+    .path-white{
+        fill: none;
+        stroke: white;
+        stroke-width: 1.5;
+    }
+
+    .path-main {
+        fill: none;
+        stroke: #36FFC0;
+        stroke-width: 2;
+    }
+
+    .blur {
+      filter: url('#dropshadow');
+      animation: circle-chart-fill 1s ;
+    }
+
+    .icon{
+        width: 200px;
+        height: 200px;
+    }
+ 
+    .circle-chart{
+        transform: rotate(-90deg);
+        transform-origin: center;
+    }
+    .circle-chart__circle {
+    animation: circle-chart-fill 2s reverse; /* 1 */ 
+    transform: rotate(-90deg); /* 2, 3 */
+    transform-origin: center; /* 4 */
+    }
+
+    .circle-chart__info {
+        animation: circle-chart-appear 2s forwards;
+        opacity: 0;
+        transform: translateY(0.3em);
+    }
+
+    @keyframes circle-chart-fill {
+      from { stroke-dasharray: 0,439.6; }
+    }
+
+    @keyframes circle-chart-appear {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .main-container{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .generated-resources{
+        display: flex;
+        flex-direction: column;
+        width: 358px;
+    }
+
+    .widget_border {
+		background: radial-gradient(44.63% 131.12% at 50% 50%, rgba(25, 28, 33, 0.8) 0%, rgba(2, 3, 4, 0.8) 100%);
+		border: 1px solid #1E9F80;
+		box-sizing: content-box;
+		border-radius: 4px;
+        align-items: center; 
+        height: 520px;
+        border-top: none;                     
+        width: 100%;
+        margin-top: -24px;
+        display: flex;
+        flex-direction: column;
+	}
+    body {
+        background-color: black;
+        padding: 100px 100px 100px 100px;
+    }
+	.widget_title_bg {
+		align-items: center;
+		background: url(./assets/dashboard/sub_page_header.svg);
+		height: 100%;
+    	background-repeat: no-repeat;
+	}
+	
+	.widget_title_name {
+		color: white;
+		font-family: Lato;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 25px;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+        margin-top: 20px;
+        margin-left: 40px;
+	}
+   
+    .resource-type{
+        color: white;
+        display: flex;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 60px;
+        margin-top: 9px;
+    }
+
+    .resource-type .resource-name{
+        width: 50%;
+        align-items: center;
+    }
+    
+    .resource-item-selected{
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       /* tab.active */
+        background: radial-gradient(66.87% 108.87% at 50% 126.61%, rgba(54, 255, 192, 0.3) 0%, rgba(54, 255, 192, 0) 85.94%);
+        border-bottom: #36FFC0;
+        border-bottom-style: solid;
+        border-bottom-width: 3px;
+    }
+    
+    .resource-total {
+        display: flex;
+        margin-top: 37px;
+        justify-content: center;
+    }
+
+    .resource-total img {
+        width: 34px;
+    }
+    
+    .resource-total h1{
+        margin-left: 16px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        /* identical to box height */
+        text-align: center;
+    }
+
+    .resource-detail-statistic{
+        display: flex;
+        margin-top: 6px;
+        flex-direction: column;
+    }
+    .resource-detail-row{
+        display: flex;
+        margin-top: 20px
+    }
+    
+    .resource-detail-row .resource-detail-col{
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .resource-detail-col span{
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 31px;
+        text-align: center;
+    }
+
+    .resource-detail-col span:nth-child(2){
+        margin-top: 6px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        opacity: 0.7;
+    }
+
+    .resource-product-now{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .resource-product-topline{
+        border-top-color: rgba(255, 255, 255, 0.3);
+        border-top-style: solid;
+        border-top-width: 1px;
+        width: 80%;
+        margin-top: 45px;
+        margin-bottom: 20px; 
+    }
+
+    .resource-product-now span{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 32px;
+    }
+    
+    .resource-product-now .total-shell{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 34px;
+        color: #36FFC0;
+    }
+
+    .total-shell .total-shell-label{
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 29px;
+        color: white;
+    }
+    /* .resource-product-now span:nth-child(2) span{
+        margin-top: 8px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 34px;
+        text-align: center;
+    } */
+
+</style>

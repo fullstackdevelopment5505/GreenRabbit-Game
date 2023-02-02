@@ -1,0 +1,881 @@
+<style>
+            html {
+              overflow-x: hidden;
+            }
+            
+        /* @font-face {
+                font-family: 'Lato';
+                src: url('./assets/fonts/airstrike/airstrikeout.ttf') format('truetype');
+            } */
+            /* https://www.dafont.com/airstrike.font?text=ABOUT+THE+GAME */
+            @font-face {
+                    font-family: 'Airstrike';
+                    src: url('./fonts/airstrike/airstrike.ttf') format('truetype');
+            }
+            @font-face {
+                    font-family: 'Airstrikeout';
+                    src: url('./fonts/airstrike/airstrikeout.ttf') format('truetype');
+            }
+            @font-face {
+                    font-family: 'Obvia';
+                    src: url('./fonts/obvia/Muli-Bold.ttf.woff') format('woff'),
+                    url('./fonts/obvia/Muli-Bold.ttf.svg') format('svg'),url('./fonts/obvia/Muli-Bold.ttf.eot') format('eof');
+            }
+
+            @font-face {
+                    font-family: 'Obvia';
+                    src: url('/fonts/lato/400.woff2') format('woff2'),
+                        url('/fonts/lato/400.woff') format('woff'), url('/fonts/lato/400.eot') format('eot');
+
+                }
+            @font-face {
+                    font-family: 'Forza';
+                    src: url('./fonts/obvia/Muli-Bold.ttf.woff') format('woff'),
+                    url('./fonts/obvia/Muli-Bold.ttf.svg') format('svg'),url('./fonts/obvia/Muli-Bold.ttf.eot') format('eof');
+            }
+
+            @font-face {
+                    font-family: 'Forza';
+                    src: url('/fonts/lato/400.woff2') format('woff2'),
+                        url('/fonts/lato/400.woff') format('woff'), url('/fonts/lato/400.eot') format('eot');
+
+            }
+            /* body{
+                background-color: #0E1743;
+            } */
+            .bg-wrapper{      
+                display: flex;       
+                flex-direction: column;        
+                width: 100%;
+                display: inline;
+            }
+         /* .bg-wrapper:before{
+            position: absolute;
+            content: "";
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            background-image: url('./assets/landing/bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position-x: center;
+            opacity: 0.8;
+         } */
+         section {
+            /* border-bottom: 1px solid white; */
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+        }
+        .landing-header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            width: 100vw;
+            z-index:999;
+            margin-top: 10px;
+        }
+        .landing-footer{
+            position: relative; 
+            height: 132px;
+            width: 100%;
+            display: flex;
+            justify-content:space-around;
+            background-color: #0E1425;
+            background-size: cover;
+            background-position-x: center;    
+            align-items: center;
+            margin: -8px;
+            z-index: 999;
+        }
+        .landing-footer-leftpart{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .landing-footer-rightpart{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+        }    
+        .url-iconlist{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+        }
+        .footer-font1{
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 18px;
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+            width: 100%;
+        }
+        .footer-font2{
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 14px;
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+        }
+        .footer-font3{
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 14px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.03em;
+            color: #FFFFFF;
+            width: 100%;
+            justify-content: flex-end;
+        }
+        .menu-contents{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 169px;
+        }
+        .menu-contents p{
+            font-family: Obvia;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 18px;
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+            margin-right: 40px;
+            cursor: pointer;
+        }
+        .menubutton-play{
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            background-image: url('./assets/landing/button/buttonbg1.svg');
+            background-repeat: no-repeat;
+            width: 162px;
+            height: 46px;
+            cursor: pointer;
+            min-width: 162px;
+        }
+        .menubutton-play p{
+            font-family: "Forza A", "Forza B";
+            font-style: italic;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 22px;
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+        }
+        .menubutton-play:before{
+            content: url('./assets/landing/button/buttonbg2.svg');
+            position: absolute;
+            left: 9px;
+            top: 10px;
+        }
+        .twitter-img{
+            margin-left: 30px;
+            cursor: pointer;
+        }
+        .landing-badge{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            background-image: url('./assets/landing/bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position-x: center;
+            width: 100%;
+            height: 100vh;
+            margin: -8px;
+        }
+        .landing-badge span{
+            font-family: Airstrike;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 60px;
+            line-height: 52px;
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 4px 6px 0px #000000;
+        }
+        .trial-text1{
+            display: flex;
+            margin-top: 308px;
+            margin-left: 213px;
+        }
+        .trial-text2{
+            margin-left: 184px;
+            margin-top: 18px;
+        }
+        .trial-text3{
+            margin-left: 153px;
+            margin-top: 18px;
+        }
+        .landing-section { 
+            position: relative; 
+            width: 100%;
+            display: flex;
+            /* align-items: center;
+            justify-content: center; */
+            background-image: url('./assets/landing/bg.png');
+            background-size: cover;
+            background-position-x: center;
+            flex-direction: column;
+            margin: -8px;
+        }
+        .landing-section::before {    
+            content: "";
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            background: #0E1743;
+            opacity: 0.9;
+        }
+        .section-banner{
+            display: flex;
+            flex-direction: column;
+        }
+        .landing-section-banner{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            left: calc(50%);
+            top: 0px;
+            width: 100%;
+            transform: translateX(-50%);        
+        }
+        .banner-detail-adjust1{
+            top: 85px;
+            z-index: 999;
+        }
+        .banner-detail-adjust2{
+            top: 148px;
+            max-width: 379px;
+            margin-left: -143px;
+        }
+        .banner-detail-adjust3{
+            top: 190px;
+            max-width: 379px;
+            margin-left: -115px;
+        }
+        .banner-detail-adjust4{
+            top: 175px;
+            max-width: 559px;
+            margin-left: -176px;
+        }
+        .banner-detail-adjust5{
+            top: 150px;
+        }
+        .section-banner-font {
+            color: white;
+            font-family: Airstrikeout;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 6vw;
+            line-height: 105px;
+            display: flex;
+            align-items: center;
+            opacity: 0.1;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            width: 100%;
+        }
+    
+        .section-title-font {
+            position: relative;
+            color: white;
+            font-family: Airstrike;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 45px;
+            line-height: 39px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            letter-spacing: 0.03em;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+            justify-content: center;
+        }
+        .section-container{
+            display: flex;
+            z-index: 1;
+            margin-top: 242px;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+        }
+        .aboutgame-content-text{
+            z-index: 2;
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 30px;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            color: #FFFFFF;        
+        }
+        /* .aboutgame-content-image{
+            position: relative;
+            margin-left: 39px;
+            width: 500px;
+            height: 300px;
+            border: 1px solid yellow;
+            width: 800px;
+            display: flex;
+            height: 30vh;
+            min-width: 78vw;
+            margin-top: -120px;    
+            width: 70%;
+            height: 573px;
+        } */
+        .aboutgame-content-image{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column;
+        }    
+        .shell-info{
+            position: absolute;
+            top: 460px;
+            left: 40px;
+        }
+        .shell-info img{
+            width: 220px;
+        }
+        .nftcard-info{
+            position: absolute;
+            bottom: 10px;
+            right: 340px;
+        }
+        .nftcard-info img{
+            width: 220px;
+        }
+        .synthetic-info{
+            position: absolute;
+            top: 280px;
+            left: 20px;
+        }
+        .synthetic-info img{
+            width: 161px;
+        }
+        .material-info{
+            position: absolute;
+            top: 390px;
+            right: 80px;
+            flex-wrap: wrap;
+            width: 180px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .material-info img{
+            width: 52px;
+            margin-top: 15px;
+        }
+        .completed-info{
+            position: absolute;
+            top: 40px;
+            right: 10px;
+        }
+        .completed-info img{
+           width: 220px;
+        }
+        /* .completed-info:after{
+            position: absolute;
+            width: 216px;
+            content: url('./assets/landing/aboutgame/itemsel.png');
+            bottom: 0px;
+            left: 0px;
+        } */
+    
+        .aboutgame-right-image{
+            display: flex;
+            align-items: flex-start;
+            z-index: 1;
+        }
+        .aboutgame-right-image img{
+            width: 52px;
+            margin-top: 15px;
+        }
+        /* GETTING STARTED PART START */
+        .gettingstarted-onerow{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 175px;
+        }
+        .subtitle-paragraph{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .subtitle-gettingstarted-titlepart{
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            height: auto;
+            width: 100%;
+            margin-left: 40%;
+        }        
+        .gettingstarted-titlefont{
+            font-family: Airstrike;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 24px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.03em;
+            color: #FFFFFF;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);   
+            z-index: 2;
+        }
+        .subtitle-gettingstarted-titlepart img{
+            position: absolute;
+            top: 12px;
+            left: 0px;
+        }
+        .subtitle-description-body{
+            margin-top: 50px;
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 28px;
+            color: #FFFFFF;
+            text-align: left;
+            display: flex;
+        }
+        .subtitle-videopan1{
+            display: flex;
+            position: relative;
+            height: 327px;
+            width: 443px;
+            margin-left: 100px;
+            background-image: url('./assets/landing/gettingstarted/video1.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .subtitle-videopan2{
+            display: flex;
+            position: relative;
+            height: 327px;
+            width: 443px;
+            margin-left: 100px;
+            background-image: url('./assets/landing/gettingstarted/video2.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .video-start{
+            position: absolute; 
+            width: 34px; 
+            bottom: calc(50%);  
+            transform: translate(50%, 50%); 
+            right: calc(50%);
+            cursor: pointer;
+        }
+        .stakable-nfts{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .stakable-nfts-header{
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 28px;
+            text-align: center;
+            color: #FFFFFF;
+            width: 100%;
+        }
+        .stakable-nfts-list{
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+        .stakable-nfts-oneitem{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: 23px;
+        }
+        .nft-image-info{
+            width: 117px;
+            height: auto;
+            display: flex;
+        }
+        .nft-image-name{
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 28px;
+            text-align: center;
+            color: #FFFFFF;
+            margin: auto;
+            margin-top: 11px;
+        }
+        .nft-buy-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }        
+        .nft-buy-icon{
+            width: 16px;
+            height: auto;
+        }
+        .nft-buy-name{
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center;
+            text-transform: capitalize;
+            color: #36FFC0;
+            margin-left: 7px;
+        }
+        .nft-image-info-small{
+            width: 48px;
+            height: auto;
+            display: flex;
+        }
+        .nft-image-name-small{
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 28px;
+            text-align: center;
+            color: #FFFFFF;
+            margin-left: 7px;
+        }
+        .arrownext-img{
+        }
+        .good-job-nanotopian{
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            height: auto;
+        }
+        .good-job-nanotopian img{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        .good-job-nanotopian span{
+            font-family: Airstrike;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: 28px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.03em;
+            color: #FFFFFF;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);   
+            z-index: 2;
+            margin-left: 60px;
+            margin-top: -22px;
+        }
+        .good-job-description{
+            margin-top: 50px;
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 28px;
+            color: #FFFFFF;
+            text-align: center;
+            display: flex;
+        }
+
+        .button-style229{
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            background-image: url('./assets/landing/button/button229.svg');
+            background-repeat: no-repeat;
+            width: 229px;
+            height: 44px;
+            cursor: pointer;
+            min-width: 162px;
+            margin-top: 20px;
+        }
+        .button-style229 p{
+            font-family: "Forza A", "Forza B";
+            font-style: italic;
+            font-weight: normal;
+            font-size: 18px;   
+            line-height: 22px;
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        .button-style229:before{
+            content: url('./assets/landing/button/button229-1.svg');
+            position: absolute;
+            left: 9px;
+            top: 10px;
+        }
+        .related-youtube-channel{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 120px;
+        }
+        .related-youtube-channel:before{
+            content: "";
+            position: absolute;
+            left: -10%;
+            top: -10%;
+            background: radial-gradient(61.93% 50% at 50% 50%, #0E1743 0%, #3350D9 100%);
+            opacity: 0.1;
+            width: 120%;
+            height: 140%;
+            transform: matrix(1, 0, 0, -1, 0, 0);
+        }   
+        .animaArmor{
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            width: 431px;
+            height: auto;
+        }
+        .bottom-mask{
+            content: "";
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+            height: 825px;
+            background: #080F30;
+        }
+        /* GETTING STARTED PART END */
+
+        /* LORE STARTED */
+        .chapter-title-bignum{
+            position: absolute;
+            left: 111px;
+            bottom: -32px;
+        }
+        .chapter-title-bignum span{
+            font-family: Airstrikeout;
+            font-style:normal;
+            font-weight:normal;
+            font-size: 150px;
+            line-height: 131px;
+            display: flex;
+            align-items: center;
+            color: white;
+            opacity: 0.7;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);            
+        }
+
+        .video-content-texts{
+            margin-top: 50px;
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 28px;
+            color: #FFFFFF;
+            text-align: left;
+            display: flex;
+            width: 700px;
+        }
+        .prev-next-buttons{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 70%;
+            margin-top: -150px;
+            margin-bottom: 30px;
+        }
+        .chapter-videopan{
+            display: flex;
+            position: relative;
+            height: 327px;
+            width: 443px;
+            margin-top: 80px;
+            background-image: url('./assets/landing/gettingstarted/video1.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .gettingstarted-chapterfont{
+            font-family: Airstrike;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 24px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.03em;
+            color: #FFFFFF;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);   
+            z-index: 2;
+            margin-left: 32px;
+        }
+        .gettingstarted-chapterfont1{
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: 32px;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+            margin-top:-35px;
+           
+        }
+        /* LORE ENDED */      
+    </style> 
+    <body>
+    <div class="bg-wrapper">
+        <div class="landing-header">
+            <img src="./assets/landing/common/rabbiticon.png" style="cursor: pointer" alt=""/>
+            <img src="./assets/landing/common/greenrabbittext.svg" style="margin-left: 6px;" alt=""/>
+            <div class="menu-contents">
+                <p>Getting started</p>
+                <p>Greenpaper</p>
+                <p>Lore</p>
+                <p>News</p>
+                <p>About</p>
+                <p>FAQ</p>
+            </div>
+            <div class="menubutton-play">
+                <p>PLAY</p>
+            </div>
+            <div>
+                <img class="twitter-img" src="./assets/landing/button/topicon1.svg" style="margin-left: 192px;" alt=""/>
+                <img class="twitter-img" src="./assets/landing/button/topicon2.svg" alt=""/>
+                <img class="twitter-img" src="./assets/landing/button/topicon3.svg" alt=""/>
+                <img class="twitter-img" src="./assets/landing/button/topicon4.svg" alt=""/>
+            </div>
+        </div>
+       <section class="landing-section">
+            <div class="section-banner">
+                <div class="landing-section-banner banner-detail-adjust1">
+                    <span class="section-banner-font">GREEEN RABBIT LORE</span>
+                </div>
+                <div class="landing-section-banner banner-detail-adjust2">
+                    <img src="./assets/landing/common/titlebgdecorate1.svg" alt=""/>
+                </div>
+                <div class="landing-section-banner banner-detail-adjust3">
+                    <img src="./assets/landing/common/titlebgdecorate1.svg" alt=""/>
+                </div> -->
+                <div class="landing-section-banner banner-detail-adjust4">
+                    <img src="./assets/landing/common/titlebgdecorate.svg" alt=""/>
+                </div>
+                <div class="landing-section-banner banner-detail-adjust5">
+                    <span class="section-title-font">GREEN RABBIT LORE</span>
+                </div>
+            </div>
+            <div class="section-container">
+                <div class="subtitle-gettingstarted-titlepart">
+                    
+                    <img src="./assets/landing/common/subtitlesel-gettingstarted157.svg" alt=""/>
+                    <div class="chapter-title-bignum">
+                        <span>1</span>
+                    </div>
+                    <span class="gettingstarted-chapterfont">CHAPTER</span>
+                </div>
+                <span class="gettingstarted-chapterfont1">An Introduction To Nanotopia</span>
+                <div class="gettingstarted-onerow">
+                    <div class="subtitle-paragraph">
+                        <div class="chapter-videopan">
+                            <img src="./assets/landing/readytorule/seltop.svg" style="position: absolute; top: -10px; left: -10px;" alt=""/>
+                            <img src="./assets/landing/readytorule/selbottom.svg" style="position: absolute; bottom: -10px; right: -10px;" alt=""/>
+                            <img class="video-start" src="./assets/landing/readytorule/videostart.png" alt=""/>
+                         </div>
+                        <div class="subtitle-description-body">
+                            <div class="video-content-texts">
+                                The story begins on the world of Nanotopia. A place that has known peace for countless millennium. This utopian sphere is now home to a society, made up of all manner of organic beings living in harmony with their tremendous technological advances. Having long ago mastered the symbiotic relationship between nature and technology, Nanotopia had reached what some refer to as the singularity. However, instead of being an apocalyptic moment, it only increased the harmony between all beings on the world. Every organism, whether humanoid, animal, robot, cyborg, or machine, live and work in peace as a one world community. A Shangri-la amongst the metaverse.<br><br><br>
+                                The stories of long ago remain on Nanotopia. So old they are recorded on paper. Ancient writings from the elder beings. From a time when this now perfect balance was still a dream. These papers held information about a sacred and powerful force contained within the world. A mysterious force that worked from the inside out, bringing peace and prosperity. In these writings they advised the Nanotopians to find a stasis with their world, and a respect for all other beings, and through these actions their world would flourish.<br><br><br>
+                                In the practicing of the knowledge passed down from the ancients the traditional Nanotopians continued to advance, evolve, and connect. One of the societies that has formed on Nanotopia are the Faunians. A sort of “Techno Hippy”, the Faunians are an interesting people. Their pursuit of new technologies, mixed with their respect and connection to the world and its being’s, has lead to a distinct technology that pays homage to their natural world. The Faunians hold elaborate ceremonies in order to “feel” the power of Nanotopia. During these ceremonies young Faunians experience waking dreams. Each one different and unique. Each one connecting them spiritually with a creature of their world.<br><br><br>
+                                Once a Faunian has experienced this life changing event they begin using their mastery of technology and body modification to create an exosuit in the likeness of the animal they have been bound to. These amazing suits called, Anima-Armor, are unlike anything else in the metaverse. Built with the look and attributes of their inspiration, the Faunians glide through their world with a natural ease that enhances their connection even further. The line between nature and technology continued to blur. The more in tune with their world they became, the more it seemed to provide. Most Nanotopians were very content. Working in businesses related to the arts, entertainment, recreation, or sports. Because of their mastery of technology and nature, these two things coexisted in an almost effortless balance. <br><br><br>
+                                As the generations passed, the power of this cycle spread through all facets of the world. Even non-Faunians were able to experience the ceremonies and pilot their own anima-armor. The more inhabitants to take part in the ceremony, the wider the variety of creatures represented with their anima-armors.<br><br><br>
+                                Over time a pattern emerged connecting certain types of animals with specific groups, tribes, or cities. Though there were anomalies, life continued this way for Nanotopians. The passing of centuries re-enforcing these connections, not only with animals, but with the skills and status associated with them. <br><br><br>
+                                In the way of nature, not all are created equal. Some groups had connected almost exclusively with the more envied animals such as felines, primates, and bears, while other groups were made up of reptiles, scavengers, and other less physically gifted creatures.<br><br><br>
+                                Daily living in this evolving world provided little strife on the surface. The inhabitants of Nanotopia gravitated towards contributing to society in ways that naturally coincided with their anima-armors’ abilities. While being logical, this began to cause separation amongst a world built on connection.<br><br><br>
+                                Those with less physically gifted armor were tasked with the more seemingly mundane occupations. In a world so centered on their animal totems, most reptiles worked out of the spotlight. Performing tasks integral to the survival of all.<br><br><br>
+                                One such Nanotopian, Shelldon “Shelly” Tortuga, became just as well known as any Faunian. Possessing extreme intelligence and patience he has built the largest business on Nanotopia. Shell Corp. Responsible for building the majority of automated labor on the planet. Shelly is a very generous man. Giving freely to all manner of causes, he is loved by the citizens.<br><br><br>
+                                Most of the Faunians lived what were considered more glamorous lives. While many still worked in traditional roles as teachers, or shop keepers. There were many Faunians who stood out from the crowd. The Shaman, athletes, entertainers, and builders being the celebrities of their world. Some of the most well known were the athletes who raced in “Ultra-Anima!”. An insane obstacle course style race on a massive scale. Sponsored by Shell Corp, the athletes race through a track full of natural and mechanical obstacles designed to slow them down. They are treated as heroes and watched by all. Currently Albert Greene and his Rabbit inspired Anima-Armor has taken first place. A spot normally reserved for Cheetahs, Lions, Dogs, or Gazelle.<br><br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="prev-next-buttons">
+                    <div class="button-style229">
+                        <p>PREVIOUS CHAPTER</p>
+                    </div>        
+                    <div class="button-style229">
+                        <p>NEXT CHAPTER</p>
+                    </div>        
+                </div>
+            </div>   
+        </section>    
+     
+        <section class="landing-footer">
+            <div class="landing-footer-leftpart">
+                <p class="footer-font1">GREEN RABBIT HOLDINGS, LLC - 427 E. 17TH ST. F259, COSTA MESA, CA, 92627</p>
+                <p class="footer-font2">©2022 GREEN RABBIT HOLDINGS, LLC | ALL RIGHTS RESERVED  - All trademarks referenced herein are the properties of their respective owners</p>
+            </div>
+            <div class="landing-footer-rightpart">
+                <div class="url-iconlist">
+                    <img class="twitter-img" src="./assets/landing/button/topicon1.svg" style="margin-left: 192px;" alt=""/>
+                    <img class="twitter-img" src="./assets/landing/button/topicon2.svg" alt=""/>
+                    <img class="twitter-img" src="./assets/landing/button/topicon3.svg" alt=""/>
+                    <img class="twitter-img" src="./assets/landing/button/topicon4.svg" alt=""/>
+                </div>        
+                <br>
+                <p class="footer-font3">PRIVACY  |  TERMS OF USE  |  PARTNERSHIP PROGRAM</p>
+            </div>
+        </section> 
+    </div>
+    </body>
+    
+    <script language="javascript">
+    const init = function () {
+    };
+    init();
+    </script>

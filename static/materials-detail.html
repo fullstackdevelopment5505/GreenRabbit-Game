@@ -1,0 +1,326 @@
+<html>
+    <body>
+        <div class="main-container">
+            <div class="generated-resources">
+                <div style="display: flex; flex-direction: column; width : 360px; height : 62px; z-index: 3;">
+                    <div class="widget_title_bg">
+                        <h1 class="widget_title_name">GENERATED RESOURCES</h1>
+                    </div>
+                </div>
+                <div class="widget_border" style="color:white;">
+                    <div style="margin-top: 24px; align-items: center; justify-content: center;">
+                    </div>
+                    <div class="resource-type">
+                        <div class="resource-name resource-item-selected">
+                            SHELL
+                        </div>                 
+                        <div class="resource-name">
+                            MATERIALS
+                        </div>                 
+                    </div>
+                    <div style="width: 100%">
+                        <div class="resource-statistic">
+                            <div class="go-back">
+                                <img src='./assets/dashboard/goback.svg' >
+                                <span>GO BACK</span>
+                            </div>
+                            <div class="resource-total">
+                                <img src='./assets/dashboard/Plants_Nanore.png'>
+                                <h1>9999.99 NANORE</h1>
+                            </div>
+                            <div class="next-before-part">
+                                <div class="next-before-button button-1">
+                                    <img src='./assets/dashboard/arrow_left.svg'/>
+                                </div>
+                                <div class="center-commentline"></div>
+                                <div class="next-before-button button-1">
+                                    <img src='./assets/dashboard/arrow_right.svg'/>
+                                </div>                            
+                            </div>
+                            <div class="resource-detail-statistic">
+                                <div class="resource-detail-row">
+                                    <div class="resource-detail-col">
+                                        <span>23,1K</span>
+                                        <span>Last 24h</span>
+                                    </div>
+                                    <div class="resource-detail-col">
+                                        <span>113,9K</span>
+                                        <span>Last 7 days</span>
+                                    </div>
+                                </div>
+                                <div class="resource-detail-row">
+                                    <div class="resource-detail-col">
+                                    <span>23,1K</span>
+                                    <span>Last 24h</span>
+                                    </div>
+                                    <div class="resource-detail-col">
+                                    <span>113,9K</span>
+                                    <span>Last 7 days</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div style="height: 46px;"/>
+                        </div>
+                    </div>
+
+                        
+                    </div> 
+                </div>               
+            </div>
+        </div>
+</body>
+</html>
+
+<style>
+    .button-1 {
+        cursor: pointer;
+        background-color: transparent;
+        transition: .3s;
+    }
+    .button-1:hover {
+        animation: pulse 1s infinite;
+        transition: .3s;
+    }
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        70% {
+            transform: scale(.9);
+        }
+            100% {
+            transform: scale(1);
+        }
+    }
+
+
+
+
+    .main-container{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .generated-resources{
+        display: flex;
+        flex-direction: column;
+        width: 358px;
+    }
+
+    .widget_border {
+		background: radial-gradient(44.63% 131.12% at 50% 50%, rgba(25, 28, 33, 0.8) 0%, rgba(2, 3, 4, 0.8) 100%);
+		border: 1px solid #1E9F80;
+		box-sizing: content-box;
+		border-radius: 4px;
+        align-items: center; 
+        height: 520px;
+        border-top: none;                     
+        width: 100%;
+        margin-top: -24px;
+        display: flex;
+        flex-direction: column;
+	}
+    body {
+        background-color: black;
+        padding: 100px 100px 100px 100px;
+    }
+	.widget_title_bg {
+		align-items: center;
+		background: url(./assets/dashboard/sub_page_header.svg);
+		height: 100%;
+    	background-repeat: no-repeat;
+	}
+	
+	.widget_title_name {
+		color: white;
+		font-family: Lato;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 25px;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+        margin-top: 20px;
+        margin-left: 40px;
+	}
+   
+    .resource-type{
+        color: white;
+        display: flex;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 60px;
+        margin-top: 9px;
+    }
+
+    .resource-type .resource-name{
+        width: 50%;
+        align-items: center;
+    }
+    
+    .resource-item-selected{
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       /* tab.active */
+        background: radial-gradient(66.87% 108.87% at 50% 126.61%, rgba(54, 255, 192, 0.3) 0%, rgba(54, 255, 192, 0) 85.94%);
+        border-bottom: #36FFC0;
+        border-bottom-style: solid;
+        border-bottom-width: 3px;
+    }
+        
+    .resource-statistic {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: radial-gradient(302.36% 100% at 50% 0%, rgba(228, 73, 24, 0) 0%, rgba(228, 73, 24, 0.1) 48.44%, rgba(228, 73, 24, 0) 100%), radial-gradient(157.08% 133.28% at 50% 42.42%, rgba(27, 26, 26, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+        border-radius: 4px;
+    }
+
+    .go-back{
+        cursor: pointer;
+        width: 100%;
+        margin-top: 19px;
+        margin-left: 17px;
+        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .go-back span{
+        margin-left: 10px;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .next-before-part{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content :space-evenly;
+    }
+
+    .next-before-button{
+        width: 40px; 
+        height: 40px; 
+        background-color: black;
+        justify-content: center;
+        align-items: center;
+    }
+    .next-before-button img{
+        margin-left: 14px;
+        margin-top: 10px;
+    }
+
+    .center-commentline{
+        border-top-color: rgba(255, 255, 255, 0.3);
+        border-top-style: solid;
+        border-top-width: 1px;
+        width: 50%;
+    }    
+
+    .resource-total {
+        display: flex;
+        margin-top: 34px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .resource-total img {
+        width: 60px;
+    }
+    
+    .resource-total h1{
+        margin-top: 18px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 26px;
+        /* identical to box height */
+        text-align: center;
+    }
+
+    .resource-detail-statistic{
+        display: flex;
+        flex-direction: column;
+    }
+    .resource-detail-row{
+        display: flex;
+        margin-top: 15px
+    }
+    
+    .resource-detail-row .resource-detail-col{
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .resource-detail-col span{
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 31px;
+        text-align: center;
+    }
+
+    .resource-detail-col span:nth-child(2){
+        margin-top: 6px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        opacity: 0.7;
+    }
+
+    .resource-product-now{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .resource-product-now span{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 32px;
+    }
+    
+    .resource-product-now .total-shell{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 34px;
+        color: #36FFC0;
+    }
+
+    .total-shell .total-shell-label{
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 29px;
+        color: white;
+    }
+    /* .resource-product-now span:nth-child(2) span{
+        margin-top: 8px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 34px;
+        text-align: center;
+    } */
+
+</style>

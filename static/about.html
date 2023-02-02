@@ -1,0 +1,43 @@
+
+
+  <style>
+      .SideNavOpen {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    max-width: 686px;
+    z-index: 9;
+    top: 0;
+    /*if its slide from right to left, use right: 0; transform: 150%*/
+    right: 0; 
+    transform: translate(150%,0%) translate3d(0px,0px,0px) skew(-12deg, 0deg);
+    
+    /*if slide from left to right, use left: 0; transform: -150%; */
+    left: 0;
+    transform: translate(-150%,0%) translate3d(0px,0px,0px) skew(-12deg, 0deg);
+    
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    background-color: #055872;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-transition: all 0.35s cubic-bezier(.1,.39,.67,1);
+    transition: all 0.35s cubic-bezier(.1,.39,.67,1);
+    padding: 24px 32px;
+    overflow: hidden;
+    box-shadow: 3px 0px 60px rgb(0 0 0 / 26%);
+}
+  </style>
+
+<div class="SideNavOpen">
+    <div class="row">
+      <div class="col6">
+        <h2>Start With Us</h2>
+        <ul>
+          <li>Home</li>
+          <li>Listings</li>
+        </ul>
+      </div>
+    </div>  
+  </div>

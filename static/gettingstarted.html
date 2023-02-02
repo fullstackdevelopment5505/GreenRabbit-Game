@@ -1,0 +1,1029 @@
+<style>
+            html {
+              overflow-x: hidden;
+            }
+
+        /* @font-face {
+                font-family: 'Lato';
+                src: url('./assets/fonts/airstrike/airstrikeout.ttf') format('truetype');
+            } */
+            /* https://www.dafont.com/airstrike.font?text=ABOUT+THE+GAME */
+            @font-face {
+                    font-family: 'Airstrike';
+                    src: url('./fonts/airstrike/airstrike.ttf') format('truetype');
+            }
+            @font-face {
+                    font-family: 'Airstrikeout';
+                    src: url('./fonts/airstrike/airstrikeout.ttf') format('truetype');
+            }
+            @font-face {
+                    font-family: 'Obvia';
+                    src: url('./fonts/obvia/Muli-Bold.ttf.woff') format('woff'),
+                    url('./fonts/obvia/Muli-Bold.ttf.svg') format('svg'),url('./fonts/obvia/Muli-Bold.ttf.eot') format('eof');
+            }
+
+            @font-face {
+                    font-family: 'Obvia';
+                    src: url('/fonts/lato/400.woff2') format('woff2'),
+                        url('/fonts/lato/400.woff') format('woff'), url('/fonts/lato/400.eot') format('eot');
+
+                }
+            @font-face {
+                    font-family: 'Forza';
+                    src: url('./fonts/obvia/Muli-Bold.ttf.woff') format('woff'),
+                    url('./fonts/obvia/Muli-Bold.ttf.svg') format('svg'),url('./fonts/obvia/Muli-Bold.ttf.eot') format('eof');
+            }
+
+            @font-face {
+                    font-family: 'Forza';
+                    src: url('/fonts/lato/400.woff2') format('woff2'),
+                        url('/fonts/lato/400.woff') format('woff'), url('/fonts/lato/400.eot') format('eot');
+
+            }
+            /* body{
+                background-color: #0E1743;
+            } */
+            .bg-wrapper{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                display: inline;
+            }
+         /* .bg-wrapper:before{
+            position: absolute;
+            content: "";
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            background-image: url('./assets/landing/bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position-x: center;
+            opacity: 0.8;
+         } */
+         section {
+            /* border-bottom: 1px solid white; */
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+        }
+        .landing-header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            width: 100vw;
+            z-index:999;
+            margin-top: 10px;
+        }
+        .landing-footer{
+            position: relative;
+            height: 132px;
+            width: 100%;
+            display: flex;
+            justify-content:space-around;
+            background-color: #0E1425;
+            background-size: cover;
+            background-position-x: center;
+            align-items: center;
+            margin: -8px;
+            z-index: 999;
+        }
+        .landing-footer-leftpart{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .landing-footer-rightpart{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .url-iconlist{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+        }
+        .footer-font1{
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 18px;
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+            width: 100%;
+        }
+        .footer-font2{
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 14px;
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+        }
+        .footer-font3{
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 14px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.03em;
+            color: #FFFFFF;
+            width: 100%;
+            justify-content: flex-end;
+        }
+        .menu-contents{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 169px;
+        }
+        .menu-contents p{
+            font-family: Obvia;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 18px;
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+            margin-right: 40px;
+            cursor: pointer;
+        }
+        .menubutton-play{
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            background-image: url('./assets/landing/button/buttonbg1.svg');
+            background-repeat: no-repeat;
+            width: 162px;
+            height: 46px;
+            cursor: pointer;
+            min-width: 162px;
+        }
+        .menubutton-play p{
+            font-family: "Forza A", "Forza B";
+            font-style: italic;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 22px;
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        }
+        .menubutton-play:before{
+            content: url('./assets/landing/button/buttonbg2.svg');
+            position: absolute;
+            left: 9px;
+            top: 10px;
+        }
+        .twitter-img{
+            margin-left: 30px;
+            cursor: pointer;
+        }
+        .landing-badge{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            background-image: url('./assets/landing/bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position-x: center;
+            width: 100%;
+            height: 100vh;
+            margin: -8px;
+        }
+        .landing-badge span{
+            font-family: Airstrike;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 60px;
+            line-height: 52px;
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 4px 6px 0px #000000;
+        }
+        .trial-text1{
+            display: flex;
+            margin-top: 308px;
+            margin-left: 213px;
+        }
+        .trial-text2{
+            margin-left: 184px;
+            margin-top: 18px;
+        }
+        .trial-text3{
+            margin-left: 153px;
+            margin-top: 18px;
+        }
+        .landing-section {
+            position: relative;
+            width: 100%;
+            display: flex;
+            /* align-items: center;
+            justify-content: center; */
+            background-image: url('./assets/landing/bg.png');
+            background-size: cover;
+            background-position-x: center;
+            flex-direction: column;
+            margin: -8px;
+        }
+        .landing-section::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            background: #0E1743;
+            opacity: 0.9;
+        }
+        .section-banner{
+            display: flex;
+            flex-direction: column;
+        }
+        .landing-section-banner{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            left: calc(50%);
+            top: 0px;
+            width: 100%;
+            transform: translateX(-50%);
+        }
+        .banner-detail-adjust1{
+            top: 85px;
+            z-index: 999;
+        }
+        .banner-detail-adjust2{
+            top: 148px;
+            max-width: 379px;
+            margin-left: -143px;
+        }
+        .banner-detail-adjust3{
+            top: 190px;
+            max-width: 379px;
+            margin-left: -115px;
+        }
+        .banner-detail-adjust4{
+            top: 175px;
+            max-width: 559px;
+            margin-left: -176px;
+        }
+        .banner-detail-adjust5{
+            top: 150px;
+        }
+        .section-banner-font {
+            color: white;
+            font-family: Airstrikeout;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 6vw;
+            line-height: 105px;
+            display: flex;
+            align-items: center;
+            opacity: 0.1;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            width: 100%;
+        }
+
+        .section-title-font {
+            position: relative;
+            color: white;
+            font-family: Airstrike;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 45px;
+            line-height: 39px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            letter-spacing: 0.03em;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+            justify-content: center;
+        }
+        .section-container{
+            display: flex;
+            z-index: 1;
+            margin-top: 242px;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+        }
+        .aboutgame-content-text{
+            z-index: 2;
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 30px;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            color: #FFFFFF;
+        }
+        /* .aboutgame-content-image{
+            position: relative;
+            margin-left: 39px;
+            width: 500px;
+            height: 300px;
+            border: 1px solid yellow;
+            width: 800px;
+            display: flex;
+            height: 30vh;
+            min-width: 78vw;
+            margin-top: -120px;
+            width: 70%;
+            height: 573px;
+        } */
+        .aboutgame-content-image{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column;
+        }
+        .shell-info{
+            position: absolute;
+            top: 460px;
+            left: 40px;
+        }
+        .shell-info img{
+            width: 220px;
+        }
+        .nftcard-info{
+            position: absolute;
+            bottom: 10px;
+            right: 340px;
+        }
+        .nftcard-info img{
+            width: 220px;
+        }
+        .synthetic-info{
+            position: absolute;
+            top: 280px;
+            left: 20px;
+        }
+        .synthetic-info img{
+            width: 161px;
+        }
+        .material-info{
+            position: absolute;
+            top: 390px;
+            right: 80px;
+            flex-wrap: wrap;
+            width: 180px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .material-info img{
+            width: 52px;
+            margin-top: 15px;
+        }
+        .completed-info{
+            position: absolute;
+            top: 40px;
+            right: 10px;
+        }
+        .completed-info img{
+           width: 220px;
+        }
+        /* .completed-info:after{
+            position: absolute;
+            width: 216px;
+            content: url('./assets/landing/aboutgame/itemsel.png');
+            bottom: 0px;
+            left: 0px;
+        } */
+
+        .aboutgame-right-image{
+            display: flex;
+            align-items: flex-start;
+            z-index: 1;
+        }
+        .aboutgame-right-image img{
+            width: 52px;
+            margin-top: 15px;
+        }
+        /* GETTING STARTED PART START */
+        .titlepart-bignum{
+            position: absolute;
+            left: 5px;
+            bottom: -48px;
+        }
+        .titlepart-bignum span{
+            font-family: Airstrikeout;
+            font-style:normal;
+            font-weight:normal;
+            font-size: 150px;
+            line-height: 131px;
+            display: flex;
+            align-items: center;
+            color: white;
+            opacity: 0.7;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .gettingstarted-onerow{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 175px;
+        }
+        .subtitle-paragraph{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .subtitle-gettingstarted-titlepart{
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            height: auto;
+            width: 100%;
+            margin-left: 40vw;
+        }
+        .gettingstarted-titlefont{
+            font-family: Airstrike;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 24px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.03em;
+            color: #FFFFFF;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+        .subtitle-gettingstarted-titlepart img{
+            position: absolute;
+            top: 12px;
+            left: 0px;
+        }
+        .subtitle-description-body{
+            margin-top: 50px;
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 28px;
+            color: #FFFFFF;
+            text-align: left;
+            display: flex;
+        }
+        .subtitle-videopan1{
+            display: flex;
+            position: relative;
+            height: 327px;
+            width: 443px;
+            margin-left: 100px;
+            background-image: url('./assets/landing/gettingstarted/video1.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .subtitle-videopan2{
+            display: flex;
+            position: relative;
+            height: 327px;
+            width: 443px;
+            margin-left: 100px;
+            background-image: url('./assets/landing/gettingstarted/video2.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .video-start{
+            position: absolute;
+            width: 34px;
+            bottom: calc(50%);
+            transform: translate(50%, 50%);
+            right: calc(50%);
+            cursor: pointer;
+        }
+        .stakable-nfts{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .stakable-nfts-header{
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 28px;
+            text-align: center;
+            color: #FFFFFF;
+            width: 100%;
+        }
+        .stakable-nfts-list{
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+        .stakable-nfts-oneitem{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: 23px;
+        }
+        .nft-image-info{
+            width: 117px;
+            height: auto;
+            display: flex;
+        }
+        .nft-image-name{
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 28px;
+            text-align: center;
+            color: #FFFFFF;
+            margin: auto;
+            margin-top: 11px;
+        }
+        .nft-buy-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .nft-buy-icon{
+            width: 16px;
+            height: auto;
+        }
+        .nft-buy-name{
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center;
+            text-transform: capitalize;
+            color: #36FFC0;
+            margin-left: 7px;
+        }
+        .nft-image-info-small{
+            width: 48px;
+            height: auto;
+            display: flex;
+        }
+        .nft-image-name-small{
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 28px;
+            text-align: center;
+            color: #FFFFFF;
+            margin-left: 7px;
+        }
+        .arrownext-img{
+        }
+        .good-job-nanotopian{
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            height: auto;
+        }
+        .good-job-nanotopian img{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        .good-job-nanotopian span{
+            font-family: Airstrike;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: 28px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.03em;
+            color: #FFFFFF;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            margin-left: 60px;
+            margin-top: -22px;
+        }
+        .good-job-description{
+            margin-top: 50px;
+            font-family: "Forza A", "Forza B";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 28px;
+            color: #FFFFFF;
+            text-align: center;
+            display: flex;
+        }
+
+        .button-style229{
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            background-image: url('./assets/landing/button/button229.svg');
+            background-repeat: no-repeat;
+            width: 229px;
+            height: 44px;
+            cursor: pointer;
+            min-width: 162px;
+            margin-top: 20px;
+        }
+        .button-style229 p{
+            font-family: "Forza A", "Forza B";
+            font-style: italic;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 22px;
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        .button-style229:before{
+            content: url('./assets/landing/button/button229-1.svg');
+            position: absolute;
+            left: 9px;
+            top: 10px;
+        }
+        .related-youtube-channel{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 120px;
+        }
+        .related-youtube-channel:before{
+            content: "";
+            position: absolute;
+            left: -10%;
+            top: -10%;
+            background: radial-gradient(61.93% 50% at 50% 50%, #0E1743 0%, #3350D9 100%);
+            opacity: 0.1;
+            width: 120%;
+            height: 140%;
+            transform: matrix(1, 0, 0, -1, 0, 0);
+        }
+        .animaArmor{
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            width: 431px;
+            height: auto;
+        }
+        .bottom-mask{
+            content: "";
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+            height: 825px;
+            background: #080F30;
+        }
+        /* GETTING STARTED PART END */
+    </style>
+    <body>
+    <div class="bg-wrapper">
+        <div class="landing-header">
+            <img src="./assets/landing/common/rabbiticon.png" style="cursor: pointer" alt=""/>
+            <img src="./assets/landing/common/greenrabbittext.svg" style="margin-left: 6px;" alt=""/>
+            <div class="menu-contents">
+                <p>Getting started</p>
+                <p>Greenpaper</p>
+                <p>Lore</p>
+                <p>News</p>
+                <p>About</p>
+                <p>FAQ</p>
+            </div>
+            <div class="menubutton-play">
+                <p>PLAY</p>
+            </div>
+            <div>
+                <img class="twitter-img" src="./assets/landing/button/topicon1.svg" style="margin-left: 192px;" alt=""/>
+                <img class="twitter-img" src="./assets/landing/button/topicon2.svg" alt=""/>
+                <img class="twitter-img" src="./assets/landing/button/topicon3.svg" alt=""/>
+                <img class="twitter-img" src="./assets/landing/button/topicon4.svg" alt=""/>
+            </div>
+        </div>
+       <section class="landing-section">
+            <div class="bottom-mask">
+
+            </div>
+            <div class="section-banner">
+                <div class="landing-section-banner banner-detail-adjust1">
+                    <span class="section-banner-font">GETTING STARTED</span>
+                </div>
+                <div class="landing-section-banner banner-detail-adjust2">
+                    <img src="./assets/landing/common/titlebgdecorate1.svg" alt=""/>
+                </div>
+                <div class="landing-section-banner banner-detail-adjust3">
+                    <img src="./assets/landing/common/titlebgdecorate1.svg" alt=""/>
+                </div> -->
+                <div class="landing-section-banner banner-detail-adjust4">
+                    <img src="./assets/landing/common/titlebgdecorate.svg" alt=""/>
+                </div>
+                <div class="landing-section-banner banner-detail-adjust5">
+                    <span class="section-title-font">GETTING STARTED</span>
+                </div>
+            </div>
+            <div class="section-container">
+
+                <div class="subtitle-gettingstarted-titlepart">
+                    <span class="gettingstarted-titlefont">SETTING UP A WAX WALLET</span>
+                    <img src="./assets/landing/common/subtitlesel-gettingstarted427.svg" alt=""/>
+                    <div class="titlepart-bignum">
+                        <span>1</span>
+                    </div>
+                </div>
+
+                <div class="gettingstarted-onerow">
+                    <div class="subtitle-paragraph">
+                        <div class="subtitle-description-body">
+                            Green Rabbit is played on WAX blockchain and therefore<br>
+                            you will need to setup a WAX wallet. Here’s quick a video<br>
+                            tutorial that will show you all you need to know.<br>
+                            <br>
+                            <br>
+                            Once you have your wallet set up, you can go to <br>
+                            www.play.greenrabbitgame.io or click PLAY in the top<br>
+                            righ corner<br>
+                            <br>
+                            STAKING WAX ON WALLET TARAM CPU
+                        </div>
+                    </div>
+                    <div class="subtitle-videopan1">
+                        <img src="./assets/landing/readytorule/seltop.svg" style="position: absolute; top: -10px; left: -10px;" alt=""/>
+                        <img src="./assets/landing/readytorule/selbottom.svg" style="position: absolute; bottom: -10px; right: -10px;" alt=""/>
+                        <img class="video-start" src="./assets/landing/readytorule/videostart.png" alt=""/>
+                     </div>
+                </div>
+                <div class="subtitle-gettingstarted-titlepart">
+                    <span class="gettingstarted-titlefont">GETTING YOUR FIRST NFTS</span>
+                    <img src="./assets/landing/common/subtitlesel-gettingstarted427.svg" alt=""/>
+                    <div class="titlepart-bignum">
+                        <span>2</span>
+                    </div>
+                </div>
+                <div class="gettingstarted-onerow">
+                    <div class="subtitle-paragraph">
+                        <div class="subtitle-description-body">
+                            The first NFTs that you would need in Green Rabbit are<br>
+                            the Stakeable NFTs and a Flash Drive to store them.<br>
+                            <br>
+                            You can get them from NFTHive Marketplace.<br>
+                            <br>
+                            Once the Stakeable NFTs are inside the Flash Drive<br>
+                            you will start genereting Shellinium, the main in-game<br>
+                            token that will be used across the whole game with<br>
+                            various utilities.<br>
+                            <br>
+                            You can see how to stake NFTs in detail in the following<br>
+                            video.
+                        </div>
+                    </div>
+                    <div class="subtitle-videopan2">
+                        <img src="./assets/landing/readytorule/seltop.svg" style="position: absolute; top: -10px; left: -10px;" alt=""/>
+                        <img src="./assets/landing/readytorule/selbottom.svg" style="position: absolute; bottom: -10px; right: -10px;" alt=""/>
+                        <img class="video-start" src="./assets/landing/readytorule/videostart.png" alt=""/>
+                     </div>
+                </div>
+                <div class="subtitle-gettingstarted-titlepart">
+                    <span class="gettingstarted-titlefont">HOW TO GET NFTS?</span>
+                    <img src="./assets/landing/common/subtitlesel-gettingstarted157.svg" alt=""/>
+                </div>
+                <div class="gettingstarted-onerow">
+                    <div class="subtitle-paragraph">
+                        <div class="subtitle-description-body">
+                                <div class="stakable-nfts">
+                                    <p class="stakable-nfts-header">Stakeable NFTs</p>
+                                    <div class="stakable-nfts-list">
+                                        <div class="stakable-nfts-oneitem">
+                                            <img class="nft-image-info" src="./assets/landing/gettingstarted/actionimage.png" alt="">
+                                            <p class="nft-image-name">Action image</p>
+                                            <div class="nft-buy-box">
+                                                <img class="nft-buy-icon" src="./assets/landing/gettingstarted/buynft.svg" alt="" >
+                                                <p class="nft-buy-name">Buy NFT</p>
+                                            </div>
+                                        </div>
+                                        <div class="stakable-nfts-oneitem">
+                                            <img class="nft-image-info" src="./assets/landing/gettingstarted/actionimage.png" alt="">
+                                            <p class="nft-image-name">Diorama</p>
+                                            <div class="nft-buy-box">
+                                                <img class="nft-buy-icon" src="./assets/landing/gettingstarted/buynft.svg" alt="" >
+                                                <p class="nft-buy-name">Buy NFT</p>
+                                            </div>
+                                        </div>
+                                        <div class="stakable-nfts-oneitem">
+                                            <img class="nft-image-info" src="./assets/landing/gettingstarted/actionimage.png" alt="">
+                                            <p class="nft-image-name">Lore Token</p>
+                                            <div class="nft-buy-box">
+                                                <img class="nft-buy-icon" src="./assets/landing/gettingstarted/buynft.svg" alt="" >
+                                                <p class="nft-buy-name">Buy NFT</p>
+                                            </div>
+                                        </div>
+                                        <div class="stakable-nfts-oneitem">
+                                            <img class="nft-image-info" src="./assets/landing/gettingstarted/actionimage.png" alt="">
+                                            <p class="nft-image-name">Lore Coin</p>
+                                            <div class="nft-buy-box">
+                                                <img class="nft-buy-icon" src="./assets/landing/gettingstarted/buynft.svg" alt="" >
+                                                <p class="nft-buy-name">Buy NFT</p>
+                                            </div>
+                                        </div>
+                                        <div class="stakable-nfts-oneitem">
+                                            <img class="nft-image-info" src="./assets/landing/gettingstarted/actionimage.png" alt="">
+                                            <p class="nft-image-name">3D Figure</p>
+                                            <div class="nft-buy-box">
+                                                <img class="nft-buy-icon" src="./assets/landing/gettingstarted/buynft.svg" alt="" >
+                                                <p class="nft-buy-name">Buy NFT</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="stakable-nfts" style="margin-left: 120px">
+                                    <p class="stakable-nfts-header">Flash Drive</p>
+                                    <div class="stakable-nfts-list" style="margin-top: 13px">
+                                        <div class="stakable-nfts-oneitem">
+                                            <img class="nft-image-info" src="./assets/landing/gettingstarted/flashdrive.png" style="width: 60px" alt="">
+                                            <p class="nft-image-name">Flash Drive</p>
+                                            <div class="nft-buy-box">
+                                                <img class="nft-buy-icon" src="./assets/landing/gettingstarted/buynft.svg" alt="" >
+                                                <p class="nft-buy-name">Buy NFT</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="subtitle-gettingstarted-titlepart">
+                    <span class="gettingstarted-titlefont">STAKING NFTS</span>
+                    <img src="./assets/landing/common/subtitlesel-gettingstarted427.svg" alt=""/>
+                    <div class="titlepart-bignum">
+                        <span>3</span>
+                    </div>
+                </div>
+                <div class="gettingstarted-onerow">
+                    <div class="subtitle-paragraph">
+                        <div class="subtitle-description-body">
+                            Now that you have your first Stakeable NFTs and a Flash<br>
+                            Drive you can start generating Shellinium. <br>
+                            <br>
+                            <br>
+                            We’ve covered all the details in the following video
+                        </div>
+                    </div>
+                    <div class="subtitle-videopan2">
+                        <img src="./assets/landing/readytorule/seltop.svg" style="position: absolute; top: -10px; left: -10px;" alt=""/>
+                        <img src="./assets/landing/readytorule/selbottom.svg" style="position: absolute; bottom: -10px; right: -10px;" alt=""/>
+                        <img class="video-start" src="./assets/landing/readytorule/videostart.png" alt=""/>
+                     </div>
+                </div>
+                <div class="subtitle-gettingstarted-titlepart">
+                    <span class="gettingstarted-titlefont">HOW TO GET SHELLINIUM?</span>
+                    <img src="./assets/landing/common/subtitlesel-gettingstarted157.svg" alt=""/>
+                </div>
+                <div class="gettingstarted-onerow">
+                    <div class="subtitle-paragraph">
+                        <div class="subtitle-description-body">
+                                <div class="stakable-nfts">
+                                    <div class="stakable-nfts-oneitem">
+                                        <img class="nft-image-info-small" src="./assets/landing/gettingstarted/actionimage.png" alt="">
+                                        <p class="nft-image-name-small">Diorama</p>
+                                    </div>
+                                    <div class="stakable-nfts-list">
+                                        <div class="stakable-nfts-oneitem">
+                                            <img class="nft-image-info-small" src="./assets/landing/gettingstarted/actionimage.png" alt="">
+                                            <p class="nft-image-name-small">Action image</p>
+                                        </div>
+                                        <p style="text-align: center; margin-left: 12px;">
+                                            Stakeable<br>
+                                            NFTs
+                                        </p>
+                                        <div class="stakable-nfts-oneitem">
+                                            <img class="nft-image-info-small" src="./assets/landing/gettingstarted/actionimage.png" alt="">
+                                            <p class="nft-image-name-small">Lore Coin</p>
+                                        </div>
+                                    </div>
+                                    <div class="stakable-nfts-list">
+                                        <div class="stakable-nfts-oneitem">
+                                            <img class="nft-image-info-small" src="./assets/landing/gettingstarted/actionimage.png" alt="">
+                                            <p class="nft-image-name-small">Lore Token</p>
+                                        </div>
+
+                                        <div class="stakable-nfts-oneitem">
+                                            <img class="nft-image-info-small" src="./assets/landing/gettingstarted/actionimage.png" alt="">
+                                            <p class="nft-image-name-small">3D Figure</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img class="arrownext-img" style="margin-left: 100px" src="./assets/landing/gettingstarted/arrownext.svg" alt="">
+                                <div class="stakable-nfts" style="margin-left: 25px">
+                                    <div class="stakable-nfts-list" style="margin-top: 13px">
+                                        <div class="stakable-nfts-oneitem">
+                                            <img class="nft-image-info-small" src="./assets/landing/gettingstarted/flashdrive.png" style="width: 31px; height: auto;" alt="">
+                                            <p class="nft-image-name-small">Flash Drive</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img class="arrownext-img" style="margin-left: 50px" src="./assets/landing/gettingstarted/arrownext.svg" alt="">
+                                <div class="stakable-nfts" style="margin-left: 25px">
+                                    <div class="stakable-nfts-list" style="margin-top: 30px">
+                                        <div class="stakable-nfts-oneitem">
+                                            <img class="nft-image-info-small" src="./assets/landing/gettingstarted/shellsex.png" style="width: 122px; height: auto;" alt="">
+                                            <p class="nft-image-name-small" style="margin-left: -5px; ">Shellinium</p>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="gettingstarted-onerow">
+                    <div class="subtitle-paragraph">
+                        <div class="good-job-nanotopian">
+                            <img src="./assets/landing/common/subtitlesel-goodjob2.svg" alt=""/>
+                            <img src="./assets/landing/common/subtitlesel-goodjob1.svg" style="top: -12px; left: 19px" alt=""/>
+                            <img src="./assets/landing/common/subtitlesel-gettingstarted427.svg" style="top: -3px; left: 100px" alt=""/>
+                            <span>Good JOB NANOTOPIAN!</span>
+                        </div>
+                        <div class="good-job-description" >
+                            Now you have your wax wallet, GreenRabbt NFTs and you’re generating Shellinium!<br>
+                            <br><br>
+                            You are now ready to progress to other stages of the game, create Greenprints,<br>
+                            assemble your team of Foragers, craft an Anima Armour and so much more!
+                        </div>
+                        <div class="good-job-description" >
+                            Full Gameplay guide awaits you here
+                        </div>
+                        <div class="button-style229">
+                            <p>FULL GAMEPLAY</p>
+                        </div>
+                        <div class="related-youtube-channel">
+                            <div class="good-job-description" >
+                                Don’t forget to go to the Official GreeRabbit Youtube channel where you can find Tutorials,<br>
+                                Lore videos, latest news from Nanotopia and much more!
+                            </div>
+                            <div class="button-style229">
+                                <p>YOUTUBE CHANNEL</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="animaArmor" src="./assets/landing/readytorule/greenrabbit3.png" alt="">
+
+                </div>
+                <!-- subtitlesel-aboutgreenrabbit.svg -->
+            </div>
+        </section>
+
+        <section class="landing-footer">
+            <div class="landing-footer-leftpart">
+                <p class="footer-font1">GREEN RABBIT HOLDINGS, LLC - 427 E. 17TH ST. F259, COSTA MESA, CA, 92627</p>
+                <p class="footer-font2">©2022 GREEN RABBIT HOLDINGS, LLC | ALL RIGHTS RESERVED  - All trademarks referenced herein are the properties of their respective owners</p>
+            </div>
+            <div class="landing-footer-rightpart">
+                <div class="url-iconlist">
+                    <img class="twitter-img" src="./assets/landing/button/topicon1.svg" style="margin-left: 192px;" alt=""/>
+                    <img class="twitter-img" src="./assets/landing/button/topicon2.svg" alt=""/>
+                    <img class="twitter-img" src="./assets/landing/button/topicon3.svg" alt=""/>
+                    <img class="twitter-img" src="./assets/landing/button/topicon4.svg" alt=""/>
+                </div>
+                <br>
+                <p class="footer-font3">PRIVACY  |  TERMS OF USE  |  PARTNERSHIP PROGRAM</p>
+            </div>
+        </section>
+    </div>
+    </body>
+
+    <script language="javascript">
+    const init = function () {
+    };
+    init();
+    </script>

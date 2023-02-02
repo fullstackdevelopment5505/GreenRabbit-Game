@@ -1,0 +1,476 @@
+<html>
+    <body>
+        <!-- <div class="missions-stats">   style="width: 745px; height: 400px"> -->
+        <div class="missions-stats">
+            <div class="foraging-missions">
+                <span class="missions-stats-sublabel">FORAGING MISSIONS</span>
+                <div style="display: flex; position: relative; margin-top: 38px;">
+                    <svg class="circle-chart" viewbox="0 0 170 170" width="170" height="170">
+                        <filter id="dropshadow" x="-1" y="-1" width="170" height="170">
+                            <feDropShadow dx="1" dy="1" stdDeviation="4" flood-color="#36FFC0"/>
+                        </filter>
+                        <circle stroke="#efefef" stroke-width="2.47" fill="background: linear-gradient(167.46deg, rgba(160, 255, 225, 0.05) 9.85%, rgba(129, 255, 215, 0.05) 21.14%, rgba(226, 255, 246, 0.05) 35.59%, rgba(146, 255, 221, 0.05) 47.12%, rgba(114, 240, 201, 0.05) 62.19%, rgba(171, 255, 229, 0.05) 74.44%, rgba(54, 255, 192, 0.05) 90.06%);" cx="85" cy="85" r="70"/>
+                        <circle class="blur" stroke="#36FFC0" stroke-width="4" stroke-dasharray="332.7,439.6" stroke-linecap="round" fill="none" cx="85" cy="85" r="70" />
+                    </svg>
+                    <div style="height: 100%; width: 100%; display: flex; position: absolute; flex-direction: column; justify-content: center; align-items: center;">
+                        <span style="color: #36FFC0; font-family: Lato; font-style: normal; font-weight: normal; font-size: 34px;
+                        line-height: 41px;  align-items: center;text-align: center;">84%</span>
+                        <span style="color: white; font-family: Lato; font-style: normal; font-weight: bold; font-size: 18px;
+                        line-height: 22px;  align-items: center; text-align: center;">Success rate</span>
+                    </div>
+                </div>
+                <div class="missions-success">
+                    <div class="mission-item-row">
+                        <div class="mission-subitem">
+                            <span class="mission-title-font">28</span>
+                            <span class="mission-sub-font">Total Missions</span>
+                        </div>
+                        <div class="mission-subitem">
+                            <span class="mission-title-font" style="color: green">12</span>
+                            <span class="mission-sub-font">Succesful</span>
+                        </div>
+                        <div class="mission-subitem">
+                            <span class="mission-title-font" style="color : red">9</span>
+                            <span class="mission-sub-font">Failed</span>
+                        </div>
+                    </div>                    
+                </div>
+             
+            </div>
+            <div class="forager-stats">
+                <span class="missions-stats-sublabel">FORAGER STATS</span>
+            
+                <div class="forager-stats_rightpan">
+                    <div class="forager-stats-character-info">
+                        <img src='./assets/dashboard/gr-avatar-1.png' style="width: 63px; height: 63px"> 
+                        <div class="forager-more-details">
+                            <span class="forager-Bigtext">Samil The Totem Snatcher</span>
+                            <div>Epic</div>
+                            <span class="forager-samlltext">Samil The Totem Snatcher</span>
+                        </div>
+                    </div>
+                    <div class="next-before-part">
+                        <div class="next-before-button button-1">
+                            <img src='./assets/dashboard/arrow_left.svg'/>
+                        </div>
+                        <div class="next-before-button button-1">
+                            <img src='./assets/dashboard/arrow_right.svg'/>
+                        </div>                            
+                    </div>
+                    <div class="forager-stats-lists">
+                        <div class="forager-stats-detail">
+                            <span class="mission-title-font">28</span>
+                            <span class="mission-sub-font">Total 
+                                <br/>Missions</span>
+                        </div>
+                        <div class="forager-stats-detail">
+                            <span class="mission-title-font">112.2</span>
+                            <span class="mission-sub-font">Materials 
+                                <br/>Found</span>
+                        </div>
+                        <div class="forager-stats-detail">
+                            <span class="mission-title-font">28</span>
+                            <span class="mission-sub-font">Injured</span>
+                        </div>
+                        <div class="forager-stats-detail">
+                            <span class="mission-title-font">28</span>
+                            <span class="mission-sub-font">Lucky</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+</body>
+</html>
+
+<style>
+    .missions-stats
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .foraging-missions{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 55%;
+        height: 100%;
+    }
+    .forager-stats{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 45%;
+        height: 100%;
+        margin-top: -6px;
+    }
+    .next-before-part{
+        position: absolute;
+        display: flex;
+        width: 98%;
+        justify-content: space-between;     
+    }
+    .next-before-button{
+        width: 40px; 
+        height: 40px; 
+        background-color: black;      
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 2px;
+        left: 0px;
+    }
+    .next-before-button img{
+        margin-left: 14px;
+        margin-top: 10px;
+    }
+    .button-1 {
+        cursor: pointer;
+        
+        transition: .3s;
+    }
+    .button-1:hover {
+        animation: pulse 1s infinite;
+        transition: .3s;
+    }
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        70% {
+            transform: scale(.9);
+        }
+            100% {
+            transform: scale(1);
+        }
+    }
+    .forager-stats-lists{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        max-height: 280px;
+        margin-top: 21px;
+    }
+    .forager-stats-detail{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 13px;
+        width: 95px;
+        height: 73px;
+        text-align: center;
+        margin-bottom: 21px;
+    }
+    .missions-stats-sublabel{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+    .missions-success{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 5px;
+        flex-direction: row;
+    }    
+    .mission-item-row{
+        display: flex;
+        flex-direction: row;
+        margin-top: 6px;
+    }
+    .mission-subitem{
+        margin-left: 12px;
+        margin-top: 12px; 
+        width: 120px;
+        height: 95px;
+        justify-content: center;
+        background: radial-gradient(70.29% 81.68% at 50% 42.42%, #1B202D 0%, #0C0F15 100%);
+        border: 1px solid #343C4D;
+        box-sizing: border-box;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .forager-stats_rightpan{
+        position: relative;
+        justify-content: center;
+        background: radial-gradient(70.29% 81.68% at 50% 42.42%, #1B202D 0%, #0C0F15 100%);
+        border: 1px solid #343C4D;
+        box-sizing: border-box;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        margin-top: 28px;
+    }    
+    .forager-stats-character-info{
+        display: flex;
+        flex-direction: row;
+        height: 63px;
+        width: 100%;
+        margin-top: 25px;
+        padding-left: 21px;
+    }
+    .forager-more-details{
+        display: flex;
+        flex-direction: column;
+        margin-left: 6px;
+    }
+    .forager-more-details div{
+        background: rgba(0, 0, 0, 0.8);
+        border: 1px solid #FFFFFF;
+        box-sizing: border-box;
+        border-radius: 300px;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        color: white;
+        text-align: center;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 11px;
+        line-height: 20px;
+        margin-top: 6px;
+    }
+    .forager-Bigtext{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 18px;
+        color: #FFFFFF;  
+    }
+    .forager-samlltext{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 16px;
+        color: #FFFFFF;
+        margin-top: 5px;
+    }
+    .mission-title-font{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 31px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .mission-sub-font{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        color: #FFFFFF;
+        opacity: 0.7;
+        margin-top: 4px;
+    }    
+    .blur {
+      filter: url('#dropshadow');
+      animation: circle-chart-fill 1s ;
+    }
+    .circle-chart{
+        transform: rotate(-90deg);
+        transform-origin: center;
+    }
+    @keyframes circle-chart-fill {
+      from { stroke-dasharray: 0,439.6; }
+    }
+
+
+
+    .widget_border {
+		background: radial-gradient(44.63% 131.12% at 50% 50%, rgba(25, 28, 33, 0.8) 0%, rgba(2, 3, 4, 0.8) 100%);
+		border: 1px solid #1E9F80;
+		box-sizing: content-box;
+		border-radius: 4px;
+        align-items: center; 
+        height: 520px;
+        border-top: none;                     
+        width: 100%;
+        margin-top: -24px;
+        display: flex;
+        flex-direction: column;
+	}
+    body {
+        background-color: black;
+        padding: 100px 100px 100px 100px;
+    }
+	.widget_title_bg {
+		align-items: center;
+		background: url(./assets/dashboard/sub_page_header.svg);
+		height: 100%;
+    	background-repeat: no-repeat;
+	}
+	
+	.widget_title_name {
+		color: white;
+		font-family: Lato;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 25px;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+        margin-top: 20px;
+        margin-left: 40px;
+	}
+   
+    .resource-type{
+        color: white;
+        display: flex;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 60px;
+        margin-top: 9px;
+    }
+
+    .resource-type .resource-name{
+        width: 50%;
+        align-items: center;
+    }
+    
+    .resource-item-selected{
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       /* tab.active */
+        background: radial-gradient(66.87% 108.87% at 50% 126.61%, rgba(54, 255, 192, 0.3) 0%, rgba(54, 255, 192, 0) 85.94%);
+        border-bottom: #36FFC0;
+        border-bottom-style: solid;
+        border-bottom-width: 3px;
+    }
+    
+    .resource-total {
+        display: flex;
+        margin-top: 37px;
+        justify-content: center;
+    }
+
+    .resource-total img {
+        width: 34px;
+    }
+    
+    .resource-total h1{
+        margin-left: 16px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        /* identical to box height */
+        text-align: center;
+    }
+
+    .resource-detail-statistic{
+        display: flex;
+        margin-top: 6px;
+        flex-direction: column;
+    }
+    .resource-detail-row{
+        display: flex;
+        margin-top: 20px
+    }
+    
+    .resource-detail-row .resource-detail-col{
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .resource-detail-col span{
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 31px;
+        text-align: center;
+    }
+
+    .resource-detail-col span:nth-child(2){
+        margin-top: 6px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        opacity: 0.7;
+    }
+
+    .resource-product-now{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .resource-product-topline{
+        border-top-color: rgba(255, 255, 255, 0.3);
+        border-top-style: solid;
+        border-top-width: 1px;
+        width: 80%;
+        margin-top: 45px;
+        margin-bottom: 20px; 
+    }
+
+    .resource-product-now span{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 32px;
+    }
+    
+    .resource-product-now .total-shell{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 34px;
+        color: #36FFC0;
+    }
+
+    .total-shell .total-shell-label{
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 29px;
+        color: white;
+    }
+    /* .resource-product-now span:nth-child(2) span{
+        margin-top: 8px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 34px;
+        text-align: center;
+    } */
+
+</style>

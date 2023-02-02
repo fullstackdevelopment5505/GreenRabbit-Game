@@ -1,0 +1,254 @@
+<html>
+    <body>
+        <div class="main-container">
+            <div class="stakable-nfts-subpage">
+                <div style="display: flex; flex-direction: column; width : 360px; height : 62px; z-index: 3;">
+                    <div class="widget_title_bg">
+                        <h1 class="widget_title_name">STKABLE NFT'S</h1>
+                    </div>
+                </div>
+                <div class="widget_border" style="color:white;">
+                    <div style="margin-top: 24px; align-items: center; justify-content: center;">
+                    </div>
+                    <div class="stakable-nfts-circle">
+                        <div class="stakable-nfts-progress">
+                            <div style="display: flex; position: relative; margin-top: 32px">
+                                <svg class="circle-chart" viewbox="0 0 200 200" width="200" height="200">
+                                    <filter id="dropshadow1" x="-1" y="-1" width="200" height="200">
+                                        <feDropShadow dx="1" dy="1" stdDeviation="3" flood-color="#8145FF"/>
+                                    </filter>
+                                    <filter id="dropshadow2" x="-1" y="-1" width="200" height="200">
+                                        <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#41A4FF"/>
+                                    </filter>
+                                    <filter id="dropshadow3" x="0" y="0" width="200" height="200">
+                                        <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#36FFC0"/>
+                                    </filter>
+                                    <circle class="blur1" stroke="#8145FF" stroke-width="7" fill="background: linear-gradient(167.46deg, rgba(160, 255, 225, 0.05) 9.85%, rgba(129, 255, 215, 0.05) 21.14%, rgba(226, 255, 246, 0.05) 35.59%, rgba(146, 255, 221, 0.05) 47.12%, rgba(114, 240, 201, 0.05) 62.19%, rgba(171, 255, 229, 0.05) 74.44%, rgba(54, 255, 192, 0.05) 90.06%);" cx="100" cy="100" r="90"/>
+                                    <circle class="blur2" stroke="#41A4FF" stroke-width="7" stroke-dasharray="380,565.2" stroke-linecap="round" fill="none" cx="100" cy="100" r="90" />
+                                    <circle class="blur3" stroke="#36FFC0" stroke-width="7" stroke-dasharray="220,565.2" stroke-linecap="round" fill="none" cx="100" cy="100" r="90" />
+                                </svg>
+                                <div style="height: 100%; width: 100%; display: flex; position: absolute; flex-direction: column; justify-content: center; align-items: center;">
+                                  <span style="color: white; font-family: Lato;font-style: normal;font-weight: normal;font-size: 44px;line-height: 53px;text-align: center;">27</span>
+                                    <span style="color: white; font-family: Lato; font-style: normal; font-weight: bold; font-size: 20px; line-height: 24px; text-align: center;">Total</span>                    </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div class="stakable-nfts-content">
+                         <div class="stakable-subitem">
+                            <div class="stakable-subitem-bar1">
+                            </div>
+                            <span class="item-bg-1"></span>
+                            <span class="stakable-nfts-largeFont">5</span>
+                            <span class="stakable-nfts-smallFont">Staked</span>
+                            <img class="stakable-nfts-arrowButton" src="./assets/dashboard/Chevron right.svg"/>
+                         </div>   
+                         <div class="stakable-subitem">
+                            <div class="stakable-subitem-bar2">
+                            </div>
+                            <span class="item-bg-2"></span>
+                            <span class="stakable-nfts-largeFont">5</span>
+                            <span class="stakable-nfts-smallFont">Unstaked</span>
+                            <img class="stakable-nfts-arrowButton" src="./assets/dashboard/Chevron right.svg"/>
+                         </div>   
+                         <div class="stakable-subitem">
+                            <div class="stakable-subitem-bar3">
+                            </div>
+                            <span class="item-bg-3"></span>
+                            <span class="stakable-nfts-largeFont">12</span>
+                            <span class="stakable-nfts-smallFont">On Cooldown</span>
+                            <img class="stakable-nfts-arrowButton" src="./assets/dashboard/Chevron right.svg"/>
+                         </div>   
+                    </div>
+                </div>               
+            </div>
+        <div>
+        </div>
+       
+</body>
+</html>
+
+<style>
+    .main-container{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .stakable-nfts-circle
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .stakable-nfts-progress{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+ 
+
+    .blur1 {
+      filter: url('#dropshadow1');
+     
+    }
+    
+    .blur2 {
+      filter: url('#dropshadow2');
+      animation: circle-chart-fill2 1.5s;
+    }    
+    
+    .blur3 {
+      filter: url('#dropshadow3');
+      animation: circle-chart-fill3 1s;
+    }    
+
+    .circle-chart{
+        transform: rotate(-90deg);
+        transform-origin: center;
+    }
+
+    @keyframes circle-chart-fill1 {
+      from { stroke-dasharray: 0,565.2; }
+    }
+    
+    @keyframes circle-chart-fill2 {
+      from { stroke-dasharray: 0,565.2; }
+    }    
+
+    @keyframes circle-chart-fill3 {
+      from { stroke-dasharray: 0,565.2; }
+    }    
+
+    .stakable-nfts-subpage{
+        display: flex;
+        flex-direction: column;
+        width: 358px;
+    }
+
+    .widget_border {
+		background: radial-gradient(44.63% 131.12% at 50% 50%, rgba(25, 28, 33, 0.8) 0%, rgba(2, 3, 4, 0.8) 100%);
+		border: 1px solid #1E9F80;
+		box-sizing: content-box;
+		border-radius: 4px;
+        align-items: center; 
+        height: 520px;
+        border-top: none;                     
+        width: 100%;
+        margin-top: -24px;
+        display: flex;
+        flex-direction: column;
+	}
+    body {
+        background-color: black;
+        padding: 100px 100px 100px 100px;
+    }
+	.widget_title_bg {
+		align-items: center;
+		background: url(./assets/dashboard/sub_page_header.svg);
+		height: 100%;
+    	background-repeat: no-repeat;
+	}
+	
+	.widget_title_name {
+		color: white;
+		font-family: Lato;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 25px;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+        margin-top: 20px;
+        margin-left: 40px;
+	}
+   
+     .stakable-nfts-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 24px;
+        width: 100%;
+    }
+    .stakable-subitem{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content:flex-start;
+        min-width: 346px;
+        cursor: pointer;
+        margin-left: 16px;
+        margin-top: 12px;
+    }    
+    .stakable-subitem-bar1{
+        width: 20px; 
+        border-left: 6px solid #36FFC0;
+        min-height: 53px;
+    }
+    .stakable-subitem-bar2{
+        width: 20px; 
+        border-left: 6px solid #2CACF4;
+        min-height: 53px;
+    }
+    .stakable-subitem-bar3{
+        width: 20px; 
+        border-left: 6px solid #753BEE;
+        min-height: 53px;
+    }
+ 
+    .item-bg-1{
+        background: linear-gradient(90.55deg, #36FFC0 -0.47%, rgba(54, 255, 192, 0) 103.99%);
+        height: 53px;
+        width: 100%;
+        display: flex;
+        opacity: 0.3;
+        margin-left: -22px;
+    }
+
+    .item-bg-2{
+        background: linear-gradient(90.55deg, #2CACF4 -0.47%, rgba(44, 172, 244, 0) 103.99%);
+        height: 53px;
+        width: 100%;
+        display: flex;
+        opacity: 0.3;
+        margin-left: -22px;
+    }
+
+    .item-bg-3{
+        background: linear-gradient(90.55deg, #753BEE -0.47%, rgba(117, 59, 238, 0) 103.99%);
+        height: 53px;
+        width: 100%;
+        display: flex;
+        opacity: 0.3;
+        margin-left: -22px;
+    }
+
+    .stakable-nfts-largeFont{
+        position: absolute;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 26px;
+        text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+        margin-left: 40px;
+    }
+    .stakable-nfts-smallFont{
+        position: absolute;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        margin-left: 78px;
+    }
+    .stakable-nfts-arrowButton{
+        position: absolute;
+        margin-left: 290px;
+        
+
+    }
+
+</style>

@@ -1,0 +1,2206 @@
+<style>
+   
+html {
+   /* scroll-behavior: smooth; */
+  /* -ms-scroll-snap-points-y: repeat(100vh);
+      scroll-snap-points-y: repeat(100vh);
+  -ms-scroll-snap-type: y mandatory; */
+      /* scroll-snap-type: y mandatory; */
+      overflow-x: hidden;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+  text-align: center;
+  position: relative;
+}
+/* partner : https://www.leonicornswap.com/ */
+/* swithcer: https://alvarotrigo.com/blog/create-a-slidebar-bullet-navigation-to-smoothly-snap-to-sections/ */
+
+
+/* https://www.npmjs.com/package/svelte-video-player */
+
+    /* @font-face {
+            font-family: 'Lato';
+            src: url('./assets/fonts/airstrike/airstrikeout.ttf') format('truetype');
+		} */
+        /* https://www.dafont.com/airstrike.font?text=ABOUT+THE+GAME */
+        @font-face {
+				font-family: 'Airstrike';
+				src: url('./fonts/airstrike/airstrike.ttf') format('truetype');
+		}
+        @font-face {
+				font-family: 'Airstrikeout';
+				src: url('./fonts/airstrike/airstrikeout.ttf') format('truetype');
+        }
+        @font-face {
+				font-family: 'Obvia';
+				src: url('./fonts/obvia/Muli-Bold.ttf.woff') format('woff'),
+                url('./fonts/obvia/Muli-Bold.ttf.svg') format('svg'),url('./fonts/obvia/Muli-Bold.ttf.eot') format('eof');
+        }
+
+        @font-face {
+				font-family: 'Obvia';
+				src: url('/fonts/lato/400.woff2') format('woff2'),
+					url('/fonts/lato/400.woff') format('woff'), url('/fonts/lato/400.eot') format('eot');
+
+			}
+        @font-face {
+				font-family: 'Forza';
+				src: url('./fonts/obvia/Muli-Bold.ttf.woff') format('woff'),
+                url('./fonts/obvia/Muli-Bold.ttf.svg') format('svg'),url('./fonts/obvia/Muli-Bold.ttf.eot') format('eof');
+        }
+
+        @font-face {
+				font-family: 'Forza';
+				src: url('/fonts/lato/400.woff2') format('woff2'),
+					url('/fonts/lato/400.woff') format('woff'), url('/fonts/lato/400.eot') format('eot');
+
+			}
+        /* body{
+            background-color: #0E1743;
+        } */
+        .bg-wrapper{      
+            display: flex;       
+            flex-direction: column;        
+            width: 100%;
+            scroll-snap-type: y mandatory;
+            overflow: hidden;
+        }
+     /* .bg-wrapper:before{
+        position: absolute;
+        content: "";
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-image: url('./assets/landing/bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        opacity: 0.8;
+     } */
+     section {
+        /* border-bottom: 1px solid white; */
+        padding: 1rem;
+        height: 100vh;
+        scroll-snap-align: start;
+        text-align: center;
+        position: relative;
+    }
+    .landing-header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        width: 100vw;
+        z-index:999;
+        margin-top: 10px;
+    }
+    .landing-footer{
+        height: 132px;
+        width: 100vw;
+        display: flex;
+        justify-content:space-around;
+        background-color: #0E1425;
+        background-size: cover;
+        background-position-x: center;
+        align-items: center;
+        margin: -8px;
+        z-index: 999;
+    }
+    .landing-footer-leftpart{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .landing-footer-rightpart{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }    
+    .url-iconlist{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+    }
+    .footer-font1{
+        font-family: "Forza A", "Forza B";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+        width: 100%;
+    }
+    .footer-font2{
+        font-family: "Forza A", "Forza B";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+    }
+    .footer-font3{
+        font-family: "Forza A", "Forza B";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.03em;
+        color: #FFFFFF;
+        width: 100%;
+        justify-content: flex-end;
+    }
+    .menu-contents{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 169px;
+    }
+    .menu-contents p{
+        font-family: Obvia;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+        margin-right: 40px;
+        cursor: pointer;
+        border-bottom: 2.88px solid transparent;
+    }
+    .menu-contents p:hover{
+        border-bottom: 2.88px solid #36FFC0;
+    }
+
+    .menubutton-play{
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        background-image: url('./assets/landing/button/buttonbg1.svg');
+		background-repeat: no-repeat;
+        width: 162px;
+        height: 46px;
+        cursor: pointer;
+        min-width: 162px;
+    }
+    .menubutton-play p{
+        font-family: "Forza A", "Forza B";
+        font-style: italic;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    }
+    .menubutton-play:before{
+        content: url('./assets/landing/button/buttonbg2.svg');
+		position: absolute;
+		left: 9px;
+        top: 10px;
+    }
+    .topmenu-icons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .twitter-img{
+        margin-left: 30px;
+        cursor: pointer;
+        width: 29.62px;
+    }
+
+    .icon-img-hover1:hover{
+        content : url('./assets/landing/button/topicon1-focus.svg');
+    }
+    .icon-img-hover2:hover{
+        content : url('./assets/landing/button/topicon2-focus.svg');
+    }
+    .icon-img-hover3:hover{
+        content : url('./assets/landing/button/topicon3-focus.svg');
+    }
+    .icon-img-hover4:hover{
+        content : url('./assets/landing/button/topicon4-focus.svg');
+    }
+    
+    .landing-badge{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        background-image: url('./assets/landing/bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        width: 100%;
+        height: 100vh;
+        margin: -8px;
+    }
+    .landing-badge span{
+        font-family: Airstrike;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 60px;
+        line-height: 52px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 4px 6px 0px #000000;
+    }
+    .trial-text1{
+        display: flex;
+        margin-top: 308px;
+        margin-left: 213px;
+    }
+    .trial-text2{
+        margin-left: 184px;
+        margin-top: 18px;
+    }
+    .trial-text3{
+        margin-left: 153px;
+        margin-top: 18px;
+    }
+    .landing-section { 
+        position: relative; 
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        /* background-image: url('./assets/landing/bg.png'); */
+        /* background-image: url('./assets/landing/bg-mask.png'); */
+        background: #0E1743;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: center;
+        flex-direction: column;
+        margin: -8px;
+        overflow: hidden;        
+    }
+    .landing-section::before {    
+        content: "";
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-image: url('./assets/landing/bg-mask.png');
+        background-size: cover;
+        background-position-x: center;
+        /* background: #0E1743; */
+        /* opacity: 0.9; */
+    }
+    .section-banner{
+        display: flex;
+        flex-direction: column;
+    }
+    .landing-section-banner1{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        top: 0px;
+        width: 100%;
+    }
+    .landing-section-banner2{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* left: calc(50%); */
+        left: -50px;
+        top: 0px;
+        width: 100%;
+        /* transform: translateX(-50%);    */
+    
+    }
+    .landing-section-banner3{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* left: calc(50%); */
+        left: -50px;
+        top: 0px;
+        width: 100%;
+        /* transform: translateX(-50%);         */
+    }
+    .landing-section-banner4{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* left: calc(50%); */
+        left: -50px;
+        top: 0px;
+        width: 100%;
+        /* transform: translateX(-50%);         */
+    }        
+    .landing-section-banner5{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        /* left: calc(50%); 
+        transform: translateX(-50%);        */
+    }
+    .banner-detail-adjust1{
+        top: 85px;
+        z-index: 999;
+    }
+    .banner-detail-adjust2{
+        top: 148px;
+        max-width: 379px;
+        margin-left: -143px;
+    }
+    .banner-detail-adjust3{
+        top: 190px;
+        max-width: 379px;
+        margin-left: -115px;
+    }
+    .banner-detail-adjust4{
+        top: 175px;
+        max-width: 559px;
+        margin-left: -176px;
+    }
+    .banner-detail-adjust5{
+        top: 150px;
+    }
+    .section-banner-font {
+        color: white;
+        font-family: Airstrikeout;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 6vw;
+        line-height: 105px;
+        display: flex;
+        align-items: center;
+        opacity: 0.1;
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        width: 100%;
+    }
+    /* .m-fadeOut {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s linear 300ms, opacity 300ms;
+}
+    .m-fadeIn {
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s linear 0s, opacity 300ms;
+    } */
+    @keyframes fadein {
+        from { opacity: 0; }
+        to { opacity: 0.1; }
+    }
+    @keyframes pulse {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0.1;
+        }
+    }
+    .section-title-font {
+        position: relative;
+        color: white;
+        font-family: Airstrike;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 45px;
+        line-height: 39px;
+        display: flex;
+        align-items: center;
+        /* text-align: center; */
+        letter-spacing: 0.03em;
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+        justify-content: flex-start;
+    }
+    .section-container{
+        display: flex;
+        z-index: 1;
+        margin-top: 242px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .aboutgame-container{
+        display: flex;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .aboutgame-content-text1{
+        position: relative;
+        width: 750px;
+        z-index: 3;
+        font-family: "Forza A", "Forza B";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        color: #FFFFFF;        
+    }
+    .aboutgame-content-text1 img{
+        position: absolute;
+        left: -17px;
+        top: 0px;     
+        width: 32.66px;
+        height: auto;
+    }
+    /* .aboutgame-content-image{
+        position: relative;
+        margin-left: 39px;
+        width: 500px;
+        height: 300px;
+        border: 1px solid yellow;
+        width: 800px;
+        display: flex;
+        height: 30vh;
+        min-width: 78vw;
+        margin-top: -120px;    
+        width: 70%;
+        height: 573px;
+    } */
+    .aboutgame-content-image{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+    }    
+    .shell-info{
+        position: absolute;
+        top: 460px;
+        left: 40px;
+    }
+    .shell-info img{
+        width: 220px;
+    }
+    .nftcard-info{
+        position: absolute;
+        bottom: 10px;
+        right: 340px;
+    }
+    .nftcard-info img{
+        width: 220px;
+    }
+    .synthetic-info{
+        position: absolute;
+        top: 280px;
+        left: 20px;
+    }
+    .synthetic-info img{
+        width: 161px;
+    }
+    .material-info{
+        position: absolute;
+        top: 390px;
+        right: 80px;
+        flex-wrap: wrap;
+        width: 180px;
+        display: flex;
+        align-items: flex-start;
+    }
+    .material-info img{
+        width: 52px;
+        margin-top: 15px;
+    }
+    .completed-info{
+        position: absolute;
+        top: 40px;
+        right: 10px;
+    }
+    .completed-info img{
+       width: 220px;
+    }
+    /* .completed-info:after{
+        position: absolute;
+        width: 216px;
+        content: url('./assets/landing/aboutgame/itemsel.png');
+        bottom: 0px;
+        left: 0px;
+    } */
+
+    .aboutgame-right-image{
+        display: flex;
+        align-items: flex-start;
+        z-index: 1;
+    }
+    .aboutgame-right-image img{
+        width: 52px;
+        margin-top: 15px;
+    }
+    /* OVERVIEW PART START */
+    .button-style229{
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        background-image: url('./assets/landing/button/button229.svg');
+		background-repeat: no-repeat;
+        width: 229px;
+        height: 44px;
+        cursor: pointer;
+        min-width: 162px;
+        margin-top: 20px;
+    }
+    .button-style229 p{
+        font-family: "Forza A", "Forza B";
+        font-style: italic;
+        font-weight: normal;
+        font-size: 18px;   
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    }
+    .button-style229:before{
+        content: url('./assets/landing/button/button229-1.svg');
+		position: absolute;
+		left: 9px;
+        top: 10px;
+    }
+    .flashdrive-button{
+        display:flex;
+        width: 208px;
+        height: 40px;
+        background: #C4C4C4;
+        justify-content: center;
+        align-items: center;    
+        margin-top: -5px;
+    }
+    .flashdrive-button span{
+        font-family: Airstrike;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 26px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        color: #000000;
+    }
+    .overview-container{
+        display: flex;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+    }
+    .overview-content-left{
+        z-index: 2;
+        font-family: "Forza A", "Forza B";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        color: #FFFFFF;        
+    }
+    
+    .overview-content-right{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+    }    
+    #nav {
+        float: left;
+        width: 770px;
+        /* border: 1px solid red; */
+    }
+    #nav li{
+        position: relative;
+    }
+    #nav li a {
+        display: inline-block;
+        background:transparent;
+        /* border: 1px solid blue; */
+        text-decoration: none;
+        color: #000;
+        height: 85px;
+        opacity: 0.6;
+        position: relative;
+    }
+    #nav li div {
+        display: none;
+    }
+    group {
+        opacity : 0;
+    }
+    .overview-item-show-opacity{
+        opacity: 1;
+    }
+    .overview-item-font{
+        font-family: Airstrike;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.02em;
+        text-align: left;
+        color: #EFEFEF;
+        text-transform: uppercase;
+        cursor: pointer;
+        z-index: 999;
+    }
+    .overview-item-bg-effect1{
+        position: absolute;
+        background: linear-gradient(270deg, #192664 1.18%, rgba(25, 38, 100, 0) 100%);
+        opacity: 0.7;
+        width: 633px;
+        height: 78px;
+        top: -12px;
+        left: -77px;
+    }
+    .overview-item-bg-effect2{
+        position: absolute;
+        width: 633px;
+        height: 40px;
+        left: -55px;
+        top: 41px;
+        background: linear-gradient(270deg, #1E2E7B 1.18%, rgba(25, 38, 100, 0) 100%);
+        opacity: 0.9;
+    }
+    .overview-item-bg-effect3{
+        position: absolute;
+        font-family: Airstrikeout;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 150px;
+        line-height: 131px;
+        opacity: 0.4;
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+        top: -35px;
+        left: -41px;
+    }    
+    .overview-item-bg-line{
+        position: absolute;
+        width: 644px;
+        height: 0px;
+        left: -69px;
+        top: 65px;
+        border: 1px solid #FFFFFF;
+    }
+    .overview-item-bg-img{
+        position: absolute;
+        width: 594px;
+        height: auto;
+        top: 66px;
+        left: -143px;
+    }
+    .overview-item-content{
+        height: 220px;
+        border: 1px solid red;
+    }
+    .overview-item-contentfont{
+        padding-left: 10px;
+        padding-top: 10px;
+        display: flex;
+        width: 700px;
+        height: 100px;
+        font-family: "Forza A", "Forza B";
+        font-style: normal;
+        font-weight: normal;
+        text-align: left;
+        font-size: 18px;
+        line-height: 28px;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    /* OVERVIEW PART END */
+
+    /* ABOUT GREEN RABBIT START */
+    .aboutgreenrabbit-container{
+        display: flex;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .aboutgreenrabbit-item-row{
+        display: flex;
+        width: 100vw;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .aboutgreenrabbit-content-text{
+        z-index: 2;
+        font-family: "Forza A", "Forza B";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;        
+        flex-wrap: wrap;
+    }
+    .subtitle-description{
+        display: flex;
+        flex-direction: column;
+        margin-left: calc(25%);
+        transform: translateX(-50%);
+        width: 50%;
+    }
+    .subtitle-imagepart{
+        display: flex;
+        flex-direction: column;
+        margin-left: calc(50%);
+        transform: translateX(-50%);
+        width: 100%;
+    }
+    .subtitle-description-titlepart{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 245px;
+        height: auto;
+    }
+
+    
+    /* .with-end-mask{
+        position: absolute;
+        top: 0px;
+        right: 30px;
+        background-image: url('./assets/landing/aboutgreenrabbit/mask.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    } */
+    .subtitle-description-titlepart span{
+        font-family: Airstrike;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 28px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.03em;
+        color: #FFFFFF;
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);   
+        z-index: 1;
+    }
+    .subtitle-description-titlepart img{
+        position: absolute;
+        top: 12px;
+    }
+    .subtitle-description-body{
+        margin-top: 26px;
+        font-family: "Forza A", "Forza B";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 28px;
+        color: #FFFFFF;
+        text-align: left;
+        
+    }
+    .team-imagelist{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .mask-image-end{
+        display: relative;
+        width: 100%;
+    }    
+    .mask-image-end  img{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 430px;
+        height: 396px;
+    }
+    .nextbutton-image-toend{
+        width: 100%;
+    }    
+    .nextbutton-image-toend  img:nth-child(1){
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        width: 101px;
+        height: 40px;
+        z-index: 1;
+    }
+    .nextbutton-image-toend  img:nth-child(2){
+        position: absolute;
+        bottom: 8px;
+        right: 40px;
+        width: 18px;
+        height: auto;
+        z-index: 1;
+    }
+    .team-individual-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: 63px;
+    }
+    .team-individual-info img{
+        width: 140px;
+        height: auto;
+    }
+    .team-individual-text-bgfont{
+        font-family: Airstrike;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 26px;
+        line-height: 23px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #FFFFFF;  
+        margin-top: 31px;
+        text-transform: uppercase;
+    }
+    .team-individual-text-smallfont{
+        font-family: "Forza A", "Forza B";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 26px;
+        color: #FFFFFF;
+        margin-top: 6px;
+        text-align: center;
+    }
+    /* ABOUT GREEN RABBIT END */
+    /* ROADMAP START */
+    .roadmapstep-container{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+    .roadmap-row{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 40px;
+    }
+   
+    .roadmap-content{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        padding-bottom: 8px;
+        height: 50px;
+        width: 350px;
+    }
+    .roadmap-content img{
+        position: absolute;
+        width: 50px;
+        /* margin-left: -16px; */
+        left: -17px;
+        bottom: 13px;
+    }
+    .roadmap-uncheckedimg{
+        position: absolute;
+        width: 32px !important;
+        /* margin-left: -16px; */
+        left: -10px !important;
+        bottom: 21px !important;
+    }
+    .roadmap-content p{
+        /* position: absolute;
+        left: 49px;
+        bottom: -11px; */
+        font-family: Obvia;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 31px;
+        line-height: 31px;
+        text-align: right;
+        letter-spacing: 0.05em;
+        color: #FFFFFF;
+        margin-left: 44px
+     }
+    .roadmap-proceed-bottomline{
+        border-bottom: 2.95px solid #36FFC0;
+    }
+    .roadmap-todo-bottomline{
+        border-bottom: 2.95px solid #5A5B5B;
+    }
+    .roadmap-proceed-bottompoint{
+        position: absolute;
+        left: 0px;
+        bottom: -7.4px;
+        background: #36FFC0;
+        border-bottom: 2.95px solid #36FFC0;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 11.0299px #36FFC0;
+        border-radius: 1.47px;
+        width: 10.29px;
+        height: 10.29px;
+    }
+    .roadmap-todo-pointpoint{
+        position: absolute;
+        right: -45px;
+        bottom: -12.4px;
+        background:  #5A5B5B;
+        border-bottom: 2.95px solid  #5A5B5B;
+        box-sizing: border-box;
+        border-radius: 1.47px;
+        width: 6.29px;
+        height: 6.29px;
+    }
+    .roadmap-proceed-rightline{
+        position: absolute;
+        right: -5px;
+        top: -42.3px;
+        border-right: 2.95px solid #36FFC0;
+        border-bottom: 2.95px solid #36FFC0;
+        border-top: 2.95px solid #36FFC0;
+        box-sizing: border-box;
+        border-radius: 2.94px;
+        width: 10px;
+        height: 103.5px;
+    }
+    .roadmap-proceed-leftline{
+        position: absolute;
+        left: -40px;
+        top: -42.4px;
+        border-left: 2.95px solid #36FFC0;
+        border-bottom: 2.95px solid #36FFC0;
+        border-top: 2.95px solid #36FFC0;
+        box-sizing: border-box;
+        border-radius: 2.94px;
+        width: 50px;
+        height: 103.5px;
+    }
+    .roadmap-todo-leftline{
+        position: absolute;
+        left: -40px;
+        top: -42.4px;
+        border-left: 2.95px solid #5A5B5B;
+        border-bottom: 2.95px solid #5A5B5B;
+        border-top: 2.95px solid #5A5B5B;
+        box-sizing: border-box;
+        border-radius: 2.94px;
+        width: 50px;
+        height: 103.5px;
+    }
+    .roadmap-todo-bottompoint{
+        position: absolute;
+        left: 0px;
+        bottom: -7.4px;
+        background: #5A5A5A;
+        border: 2.94132px solid #5A5B5B;
+        box-sizing: border-box;
+        border-radius: 1.47px;
+        width: 10.29px;
+        height: 10.29px;
+    }   
+    .step-name-and-status{
+        display: flex;
+        /* position: absolute;
+        left: 10px;
+        bottom: 10px; */
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        border-left: 1px solid #59605E;
+        padding-left: 8px;
+        margin-left: 10px;
+        margin-right: 30px;
+        padding-bottom: 5px;
+    }
+    .step-name-and-status span{
+        font-family: Obvia;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 16px;
+        letter-spacing: 0.05em;
+        color: #FFFFFF;
+    }
+    /* ROANDMAP END */
+    /* READY TO RULE NANOTOPIA START */
+    .readyrule-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .section-title-font-readyrule {
+        font-family: "Forza A", "Forza B";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 23px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .play-greenrabbit-button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 44px;
+    }
+    .button-style258{
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        background-image: url('./assets/landing/button/button258.svg');
+		background-repeat: no-repeat;
+        width: 258px;
+        height: 60px;
+        cursor: pointer;
+        min-width: 162px;
+        margin-top: 20px;
+        z-index: 1;
+    }
+    .button-style258 p{
+        font-family: "Forza A", "Forza B";
+        font-style: italic;
+        font-weight: normal;
+        font-size: 18px;   
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+    }
+    .button-style258:before{
+        content: url('./assets/landing/button/button258-1.svg');
+		position: absolute;
+		left: 9px;
+        top: 10px;
+        cursor: pointer;
+    }
+    .button-style249{
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        background-image: url('./assets/landing/button/button249.svg');
+		background-repeat: no-repeat;
+        width: 252px;
+        height: 54px;
+        cursor: pointer;
+        min-width: 162px;
+        margin-top: 20px;
+        z-index: 1;
+    }
+    .button-style249 p{
+        font-family: "Forza A", "Forza B";
+        font-style: italic;
+        font-weight: normal;
+        font-size: 18px;   
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+    }
+    .button-style249:before{
+        content: url('./assets/landing/button/button249-1.svg');
+		position: absolute;
+		left: 9px;
+        top: 10px;
+        cursor: pointer;
+    }
+    .readyrule-contents{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .readyrule-before-starting{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .readyrule-before-starting img{
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 525px;
+        height: auto;
+    }
+    .readyrule-quickguide{
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .readyrule-quickguide-col{
+        display: flex;
+        flex-direction: column;
+    }
+    .readyrule-quickguide-font{
+        font-family: "Forza A", "Forza B";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 26px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .readyrule-content-font1{
+        font-family: Airstrike;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.03em;
+        color: #FFFFFF;
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+        margin-top: 142px;
+        position: relative;
+        z-index: 1;
+    }
+    .readyrule-bg2character{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        width: 100vw;
+        left: -79px;
+        bottom: -24px;
+        justify-content: space-between;
+    }
+    .readyrule-bg2character img{
+        width: 322px;
+        /* margin-left: calc(50vw - 300px);
+        transform: translateX(-100%);  */
+    }
+    .readyrule-doublecharacter{
+        display:  flex; 
+        position: relative;
+      
+    }
+    .readyrule-shadow-character{
+        position: absolute;
+        width: 322px;
+        height: auto;
+        top: 14px;
+        left: 174px;        
+    }
+    .readyrule-character-select{
+        position: absolute;
+        bottom: 0px;
+        left: 206px;
+        bottom: 327px;
+        height: 327px;
+        width: 443px;
+    }
+    .readyrule-selected-cutimg:before{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background: radial-gradient(61.93% 50% at 50% 50%, #0E1743 0%, #3350D9 100%);
+        opacity: 0.1;
+    }
+
+    .readyrule-bottommask{
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        height: 408px;
+        width: 100vw;
+        background-color: #000000;
+        opacity: 0.3;
+    }
+    /* READY TO RULE NANOTOPIA END */
+    /*SIDEBAR STARTED*/
+    .landing-sidebar{
+        display: relative;
+        position: fixed;
+        right: 157px;
+        bottom: calc(50vh);
+        z-index: 1000;
+    }
+    .sidebar-item{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 200px;
+        margin-top: 10px;
+    }
+    .sidebar-item-button{
+        display: flex;
+        background: #36FFC0;
+        border: 1px solid #36FFC0;
+        border-radius: 999px;
+        width: 8px;
+        height: 8px;
+        z-index: 999;
+        cursor: pointer;
+    }
+    .sidebar-item-text{
+        font-family: "Forza A", "Forza B";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 28px;
+        text-align: left;
+        color: #FFFFFF;
+        margin-right: 15px;
+        opacity: 0;
+    }
+    aside {
+        position: fixed;
+        top: 48%;
+        transform: translate(-50%, -50%);
+    }
+    aside ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style-type: none;
+    }
+    aside ul li .indicator {
+        cursor: pointer;
+        display: block;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        background-color:#4652B6;
+        z-index: 999;
+    }
+    aside ul li .active {
+        /* transform: scale(2); */
+        transition: transform 200ms ease-in-out;
+        background-color: #36FFC0;        
+    }
+    .try-hidden-tag {
+        display: none;
+    }
+    .try-show-tag {
+        display: flex;
+    }
+    .sidebar-innerline{
+        position: absolute;
+        display: flex;
+        /* border: 1px solid red; */
+        background-color: #4652B6;
+        top: 38px;
+        right: 3.5px;
+        width: 1px;
+        height: 153px;
+    }
+    /*SIDEBAR ENDED*/
+    /* LOGIN STARTED */
+    .login-pannel img{
+        width: 716px;
+    }
+    /* LOGIN ENDED */
+    /* SPECIAL EFFECTS STARTED */
+    .rabbiticon-effect{
+        cursor: pointer;
+        transition: all 3s;
+    }
+    .rabbiticon-effect:hover{
+        transform: rotate(1080deg);
+    }
+    .rabbittext-effect{
+      margin-left: 6px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .rabbittext-effect:hover{
+        transform: skewY(2deg);
+    }
+    .cylon_eye {
+        background-color: red;
+        background-image: linear-gradient(to right,
+            rgba(0, 0, 0, .9) 25%,
+            rgba(0, 0, 0, .1) 50%,
+            rgba(0, 0, 0, .9) 75%);
+        color: white;
+        height: 100%;
+        width: 20%;
+
+      -webkit-animation: 4s linear 0s infinite alternate move_eye;
+         animation: 4s linear 0s infinite alternate move_eye;
+    }
+
+    @-webkit-keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; }  }
+    @keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; }  }
+    /* SPECIAL EFFECTS ENDED */
+    /* https://www.webdesignerdepot.com/2014/05/8-simple-css3-transitions-that-will-wow-your-users/     swing */
+</style> 
+
+<body>
+<div class="bg-wrapper">
+    <div class="landing-header">
+        <img src="./assets/landing/common/rabbiticon.png" 
+             class="rabbiticon-effect" alt=""/>
+        <img src="./assets/landing/common/greenrabbittext.svg" 
+            class="rabbittext-effect" alt=""/>
+        <div class="menu-contents">
+            <p><a href="./gettingstarted.html" style="text-decoration:none; color:inherit;">Getting started</a> </p>
+            <p>Greenpaper</p>
+            <p><a href="./lore.html" style="text-decoration:none; color:inherit;">Lore</a></p>
+            <p>News</p>
+            <p><a href="./about.html" style="text-decoration:none; color:inherit;">About</a></p>
+            <p>FAQ</p>
+        </div>
+        <div class="menubutton-play">
+            <p>PLAY</p>
+        </div>
+        <div class="topmenu-icons">
+            <img class="twitter-img icon-img-hover1" src="./assets/landing/button/topicon1.svg"  style="margin-left: 192px; width: 29.62px" alt=""/>
+            <img class="twitter-img icon-img-hover2" src="./assets/landing/button/topicon2.svg" style="width: 26.55px" alt=""/>
+            <img class="twitter-img icon-img-hover3" src="./assets/landing/button/topicon3.svg" style="width: 25.79px" alt=""/>
+            <img class="twitter-img icon-img-hover4" src="./assets/landing/button/topicon4.svg" style="width: 22px" alt=""/>
+        </div>
+
+        <div class="landing-sidebar" id="sidebar">
+            <aside>
+                <div class="sidebar-innerline">
+
+                </div>
+                <ul>
+                  <li class="sidebar-item">
+                    <span name="aboutthegame" class="sidebar-item-text">About the game</span>
+                    <a class="indicator" href="#aboutthegame"> </a>
+                  </li>
+                  <li class="sidebar-item">
+                    <span name="overview" class="sidebar-item-text">Gameplay Overview</span>
+                    <a class="indicator" href="#overview"></a>
+                  </li>
+                  <li class="sidebar-item">
+                    <span name="aboutgreenrabbit" class="sidebar-item-text">About Green Rabbit</span>
+                    <a class="indicator" href="#aboutgreenrabbit"></a>
+                  </li>
+                  <li class="sidebar-item">
+                    <span name="roadmap" class="sidebar-item-text">Roadmap</span>
+                    <a class="indicator" href="#roadmap"></a>
+                  </li>
+                  <li class="sidebar-item">
+                    <span name="readynanotopia" class="sidebar-item-text">Rule Nanotopia!</span>
+                    <a class="indicator" href="#readynanotopia"></a>
+                  </li>
+                </ul>
+              </aside>
+            </div>
+    </div>
+    <section class="landing-badge" id="badge">
+        <span class="trial-text1">STAKE, CRAFT AND EARN!</span>
+        <span class="trial-text2">RACE IN UNIQUE 3D RACES!</span>
+        <span class="trial-text3">SAVE NANOTOPIA!</span>
+    </section>
+    <!-- <div style="height: 120px;  background: #0E1743;">
+    </div> -->
+   
+        <!-- <p class="sidebar-item-text">
+            About the game
+        </p>
+        <div class="sidebar-item-button">
+            
+        </div> -->
+  
+    <section class="landing-section" id="aboutthegame">
+        <div class="section-banner">
+            <div class="landing-section-banner1 banner-detail-adjust1">
+                <span class="section-banner-font">ABOUT THE GAME</span>
+            </div>
+            <div class="landing-section-banner2 banner-detail-adjust2">
+                <img src="./assets/landing/common/titlebgdecorate1.svg" alt=""/>
+            </div>
+            <div class="landing-section-banner3 banner-detail-adjust3">
+                <img src="./assets/landing/common/titlebgdecorate1.svg" alt=""/>
+            </div>
+            <div class="landing-section-banner4 banner-detail-adjust4">
+                <img src="./assets/landing/common/titlebgdecorate.svg" alt=""/>
+            </div>
+            <div class="landing-section-banner5 banner-detail-adjust5">
+                <span class="section-title-font">ABOUT THE GAME</span>
+            </div>
+        </div>
+        <div class="section-container">
+            <div class="aboutgame-container">
+                <div class="aboutgame-content-text1">
+                    <img src="./assets/landing/common/subtitlesel.svg" alt=""/>
+                    The world of Nanotopia is home to an advanced, utopian society.  Its citizens are immersed in the beautiful cities and diverse landscapes, through exciting competitions and activities. At the top of this list are the prestigious Ultra Anima Races! <br>
+                    <br>
+                    Craft your own Anima Armor and become a legend of Nanotopia!
+                </div>
+                <div class="aboutgame-content-text1" style="margin-left: 50px; margin-top: 80px">
+                    <img src="./assets/landing/common/subtitlesel.svg" alt=""/>
+                    But wait, using a secret time machine, an evil force arrives from the grim future.  Determined to save themselves by conquering Nanotopia and harnessing the power of its people and resources. <br>
+                    <br>
+                    Be sure you are ready by building and upgrading your Anima Armor, soon it will be needed for far more than just racing!<br>
+                    <br>
+                    Nanotopia needs your help! Are you up to the challenge? 
+                </div>
+                <div class="aboutgame-content-image">
+                    <div class="aboutgame-right-image">
+                        <!-- <img src="./assets/landing/aboutgame/synthetic_process.png"  style="width: 730px;" alt=""> -->
+                    </div> 
+
+                    <!-- <div class="shell-info">
+                        <img src="./assets/landing/aboutgame/shell.png" alt="">
+                    </div>
+                    <div class="nftcard-info">
+                        <img src="./assets/landing/aboutgame/nftcard.png" alt="">
+                    </div>
+                    <div class="synthetic-info">
+                        <img src="./assets/landing/aboutgame/synthetic.png" alt="">
+                    </div>
+                    <div class="material-info">
+                        <img src="./assets/landing/aboutgame/floria.png" style="margin-left: 6px" alt="">
+                        <img src="./assets/landing/aboutgame/sap.png" style="height: 60px; width: auto; margin-left: 43px;" alt="">
+                        <img src="./assets/landing/aboutgame/versat.png" style="height: 53px; width: auto; " alt="">
+                        <img src="./assets/landing/aboutgame/nanore.png" style="height: 50px; width: auto; margin-left: 40px;" alt="">
+                        
+                    </div>
+                    <div class="completed-info">
+                        <img src="./assets/landing/aboutgame/completednfts.png" alt="">
+                    </div> -->
+                </div>
+            </div>
+        </div>    
+    </section>
+    <section class="landing-section" id="overview">
+        <!-- https://codepen.io/cssnagarajan/pen/LVJdWb -->
+        <div class="section-banner">
+            <div class="landing-section-banner1 banner-detail-adjust1">
+                <span class="section-banner-font">GAMEPLAY OVERVIEW</span>
+            </div>
+            <div class="landing-section-banner2 banner-detail-adjust2">
+                <img src="./assets/landing/common/titlebgdecorate1.svg" alt=""/>
+            </div>
+            <div class="landing-section-banner3 banner-detail-adjust3">
+                <img src="./assets/landing/common/titlebgdecorate1.svg" alt=""/>
+            </div>
+            <div class="landing-section-banner4 banner-detail-adjust4">
+                <img src="./assets/landing/common/titlebgdecorate.svg" alt=""/>
+            </div>
+            <div class="landing-section-banner5 banner-detail-adjust5">
+                <span class="section-title-font">GAMEPLAY OVERVIEW</span>
+            </div>
+        </div>
+        <div class="section-container">
+            <div class="overview-container">
+                <div class="overview-content-left">
+                    <ul id="nav" style=" list-style-type: none; padding: 10px">
+                        <li>
+                            <group style="opacity: 1;">
+                                <span class="overview-item-bg-effect3">1</span>
+                                <span class="overview-item-bg-line"></span>
+                                <img class="overview-item-bg-img" src="./assets/landing/common/subtitlesel-overview594.svg" alt="">
+                                <span class="overview-item-bg-effect1"></span>
+                                <span class="overview-item-bg-effect2"></span>
+                            </group>
+
+                            <a style="display: relative"> 
+                                <p class="overview-item-font">
+                                    Stake NFTs to Get Shellinium!
+                                </p>
+                            </a>
+                            <div class="overview-item-contentfont">
+                                    Stake NFTs on a Green Rabbit Flash Drive and claim the Green Rabbit in-game token - Shellinium!
+                                        Shellinium is the backbone of the Green Rabbit economy and the main token you will need in order to progress in the game
+                            </div>
+                        </li>
+                        <li>
+                            <group>
+                                <span class="overview-item-bg-effect3">2</span>
+                                <span class="overview-item-bg-line"></span>
+                                <img class="overview-item-bg-img" src="./assets/landing/common/subtitlesel-overview594.svg" alt="">
+                                <span class="overview-item-bg-effect1"></span>
+                                <span class="overview-item-bg-effect2"></span>
+                            </group>
+                            <a>
+                                <p class="overview-item-font">
+                                    Send Foragers on Missions!
+                                </p>
+                            </a>
+                            <div class="overview-item-contentfont">
+                                Assemble your team of Foragers, send them on missions and collect valuable materials which will be used for crafting your Anima Armours, upgrades, repairs and more!
+                            </div>
+                        </li>
+                        <li>
+                            <group>
+                                <span class="overview-item-bg-effect3">3</span>
+                                <span class="overview-item-bg-line"></span>
+                                <img class="overview-item-bg-img" src="./assets/landing/common/subtitlesel-overview594.svg" alt="">
+                                <span class="overview-item-bg-effect1"></span>
+                                <span class="overview-item-bg-effect2"></span>
+                            </group>
+                            <a>
+                                <p class="overview-item-font">
+                                    Own Land in Nanotopia!
+                                </p>
+                            </a>
+                            <div class="overview-item-contentfont">
+                                Own you pieace of Nanotopia and collect fees everytime a Foragers uses your land to collect resources. Upgrade and maintain the land to make it more attractive for foragers and receive a higher yield! Trade the resources or use them to craft an Anima Armour!
+                            </div>
+                        </li>
+                        <li>
+                            <group>
+                                <span class="overview-item-bg-effect3">4</span>
+                                <span class="overview-item-bg-line"></span>
+                                <img class="overview-item-bg-img" src="./assets/landing/common/subtitlesel-overview594.svg" alt="">
+                                <span class="overview-item-bg-effect1"></span>
+                                <span class="overview-item-bg-effect2"></span>
+                            </group>
+                            <a>
+                                <p class="overview-item-font">
+                                    Craft and assemble youR Anima Armour!
+                                </p>
+                            </a>
+                            <div class="overview-item-contentfont">
+                                Own you pieace of Nanotopia and collect fees everytime a Foragers uses your land to collect resources. Upgrade and maintain the land to make it more attractive for foragers and receive a higher yield! Trade the resources or use them to craft an Anima Armour!
+                            </div>
+                        </li>
+                        <li>
+                            <group>
+                                <span class="overview-item-bg-effect3">5</span>
+                                <span class="overview-item-bg-line"></span>
+                                <img class="overview-item-bg-img" src="./assets/landing/common/subtitlesel-overview594.svg" alt="">
+                                <span class="overview-item-bg-effect1"></span>
+                                <span class="overview-item-bg-effect2"></span>
+                            </group>
+                            <a>
+                                <p class="overview-item-font">
+                                    HANG OUT IN THE METAVERSE
+                                </p>
+                            </a>
+                            <div class="overview-item-contentfont">
+                                Enter Nanotopia Metaverse and hang out the comminity, meet new people, discuss about game strategies and more. Test your Anima Armour by competing in various mini-games and discovering hidden places inside the Metaverse!
+                            </div>
+                        </li>
+                        <li>
+                            <group>
+                                <span class="overview-item-bg-effect3">6</span>
+                                <span class="overview-item-bg-line"></span>
+                                <img class="overview-item-bg-img" src="./assets/landing/common/subtitlesel-overview594.svg" alt="">
+                                <span class="overview-item-bg-effect1"></span>
+                                <span class="overview-item-bg-effect2"></span>
+                            </group>
+                            <a>
+                                <p class="overview-item-font">
+                                    Race IN UNIQUE 3d RACES!
+                                </p>
+                            </a>
+                            <div class="overview-item-contentfont">
+                                Particiapte in unique parkour style 3D races: run, climb on obsticles, jump of buildings, slide though passages, apply the right strategy based on your Anima Armour characteristics and become the Legend on Nanotopia!
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="overview-content-right">
+                    <div class="aboutgame-right-image">
+                        <img src="./assets/landing/overview/flashdrives.png"  style="width: 355px;" alt="">
+                    </div> 
+                    <div class="flashdrive-button">
+                        <span>FLASH DRIVE</span>
+                    </div>
+                    <div class="button-style229">
+                        <p>CLAIM SHELLINIUM</p>
+                    </div>
+                
+                    <!-- <div class="shell-info">
+                        <img src="./assets/landing/aboutgame/shell.png" alt="">
+                    </div>
+                    <div class="nftcard-info">
+                        <img src="./assets/landing/aboutgame/nftcard.png" alt="">
+                    </div>
+                    <div class="synthetic-info">
+                        <img src="./assets/landing/aboutgame/synthetic.png" alt="">
+                    </div>
+                    <div class="material-info">
+                        <img src="./assets/landing/aboutgame/floria.png" style="margin-left: 6px" alt="">
+                        <img src="./assets/landing/aboutgame/sap.png" style="height: 60px; width: auto; margin-left: 43px;" alt="">
+                        <img src="./assets/landing/aboutgame/versat.png" style="height: 53px; width: auto; " alt="">
+                        <img src="./assets/landing/aboutgame/nanore.png" style="height: 50px; width: auto; margin-left: 40px;" alt="">
+                        
+                    </div>
+                    <div class="completed-info">
+                        <img src="./assets/landing/aboutgame/completednfts.png" alt="">
+                    </div> -->
+                </div>
+            </div>
+        </div>    
+    </section>
+    <section class="landing-section" id="aboutgreenrabbit">
+        <div class="section-banner">
+            <div class="landing-section-banner1 banner-detail-adjust1">
+                <span class="section-banner-font">ABOUT GREEN RABBIT</span>
+            </div>
+            <div class="landing-section-banner2 banner-detail-adjust2">
+                <img src="./assets/landing/common/titlebgdecorate1.svg" alt=""/>
+            </div>
+            <div class="landing-section-banner3 banner-detail-adjust3">
+                <img src="./assets/landing/common/titlebgdecorate1.svg" alt=""/>
+            </div>
+            <div class="landing-section-banner4 banner-detail-adjust4">
+                <img src="./assets/landing/common/titlebgdecorate.svg" alt=""/>
+            </div>
+            <div class="landing-section-banner5 banner-detail-adjust5">
+                <span class="section-title-font">ABOUT GREEN RABBIT</span>
+            </div>
+        </div>
+        <div class="section-container">
+            <div class="aboutgreenrabbit-container">
+                <div class="aboutgreenrabbit-item-row">
+                    <div class="subtitle-description">
+                        <div class="subtitle-description-titlepart">
+                            <span>OUR STORY</span>
+                            <img src="./assets/landing/common/subtitlesel-aboutgreenrabbit.svg" alt=""/>
+                        </div>
+                        <div class="subtitle-description-body">
+                            Founded in 2021, Green Rabbit is a world wide metaverse<br>
+                            creative team focused on NFT game design and <br>
+                            development. A diverse group with combined skills in NFT<br>
+                            creation, cryptocurrency, as well as game and art design.<br>
+                            Green Rabbit is set to become the premiere team in the NFT<br>
+                            gaming space.     
+                        </div>
+                    </div>
+                    <div class="subtitle-description">
+                        <div class="subtitle-description-titlepart">
+                            <span>MILESTONES</span>
+                            <img src="./assets/landing/common/subtitlesel-aboutgreenrabbit.svg" alt=""/>
+                        </div>
+                        <div class="subtitle-description-body">
+                            Broke the record as the largest pack sale in 2021 on WAX<br><br>
+                            More than 7.000 active players<br><br>
+                            Lorem ipsum dolor sit amet qyot lorem siut amet<br><br>
+                            Lorem ipsum dolor sit amet qyot lorem siut amet<br>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="aboutgreenrabbit-item-row" style="margin-top: 108px">
+                    <div class="subtitle-imagepart">
+                        <div class="subtitle-description-titlepart">
+                            <span>TEAM</span>
+                            <img src="./assets/landing/common/subtitlesel-aboutgreenrabbit.svg" alt=""/>
+                        </div>
+                        <div class="subtitle-description-body">
+                            <div class="team-imagelist">
+                                <div class="nextbutton-image-toend">
+                                    <img src="./assets/landing/common/arrownext.svg" alt=""/> 
+                                    <img src="./assets/landing/common/arrow-character.svg" alt=""/> 
+                                </div>
+                                <div class="mask-image-end">
+                                    <img src="./assets/landing/aboutgreenrabbit/mask.png" alt=""/> 
+                                </div>
+
+                                <div class="team-individual-info">
+                                    <img src="./assets/landing/aboutgreenrabbit/nvenom.png" alt=""/>
+                                    <span class="team-individual-text-bgfont">NVENOM</span>
+                                    <span class="team-individual-text-smallfont">Management</span>
+                                </div>
+                                <div class="team-individual-info">
+                                    <img src="./assets/landing/aboutgreenrabbit/lorena.png" alt=""/>
+                                    <span class="team-individual-text-bgfont">DrPr0ph3t</span>
+                                    <span class="team-individual-text-smallfont">Management</span>
+                                </div>
+                                <div class="team-individual-info">
+                                    <img src="./assets/landing/aboutgreenrabbit/drpro.png" alt=""/>
+                                    <span class="team-individual-text-bgfont">Lorena</span>
+                                    <span class="team-individual-text-smallfont">Management</span>
+                                </div>
+                                <div class="team-individual-info">
+                                    <img src="./assets/landing/aboutgreenrabbit/pigwig.png" alt=""/>
+                                    <span class="team-individual-text-bgfont">PIGWIG</span>
+                                    <span class="team-individual-text-smallfont">Lead-Smart Contract<br>
+                                        Development
+                                    </span>
+                                </div>
+                                <div class="team-individual-info">
+                                    <img src="./assets/landing/aboutgreenrabbit/stermerlin.png" alt=""/>
+                                    <span class="team-individual-text-bgfont">STERSMERLIN</span>
+                                    <span class="team-individual-text-smallfont">Lead - Tokenomics</span>
+                                </div>
+                                <div class="team-individual-info">
+                                    <img src="./assets/landing/aboutgreenrabbit/zhuckly.png" alt=""/>
+                                    <span class="team-individual-text-bgfont">ZHUCKLY<br>(GEORGE)</span>
+                                    <span class="team-individual-text-smallfont">Unity Team</span>
+                                </div>
+                                <div class="team-individual-info">
+                                    <img src="./assets/landing/aboutgreenrabbit/victory.png" alt=""/>
+                                    <span class="team-individual-text-bgfont">Victory</span>
+                                    <span class="team-individual-text-smallfont">Unity Team</span>
+                                </div>                            
+                                <div class="team-individual-info">
+                                    <img src="./assets/landing/aboutgreenrabbit/zhuckly1.png" alt=""/>
+                                    <span class="team-individual-text-bgfont">NVENOM</span>
+                                    <span class="team-individual-text-smallfont">Management</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- subtitlesel-aboutgreenrabbit.svg -->
+        </div>    
+    </section>    
+    <section class="landing-section" id="roadmap">
+        <div class="section-banner">
+            <div class="landing-section-banner1 banner-detail-adjust1">
+                <span class="section-banner-font">ROAD MAP</span>
+            </div>
+            <div class="landing-section-banner2 banner-detail-adjust2">
+                <img src="./assets/landing/common/titlebgdecorate1.svg" alt=""/>
+            </div>
+            <div class="landing-section-banner3 banner-detail-adjust3">
+                <img src="./assets/landing/common/titlebgdecorate1.svg" alt=""/>
+            </div>
+            <div class="landing-section-banner4 banner-detail-adjust4">
+                <img src="./assets/landing/common/titlebgdecorate.svg" alt=""/>
+            </div>
+            <div class="landing-section-banner5 banner-detail-adjust5">
+                <span class="section-title-font">ROAD MAP</span>
+            </div>
+        </div>
+        <div class="section-container">
+            <div class="roadmapstep-container">
+                <div class="roadmap-row">
+                        <div class="roadmap-content roadmap-proceed-bottomline">
+                                <img src="./assets/landing/roadmap/checked.png" alt=""/>
+                                <p>1</p>
+                                <div class="step-name-and-status">
+                                    <span>Green Rabbit Staking</span>
+                                    <span style="color: #35FBBD;">Completed</span>
+                                </div>
+                                <div class="roadmap-proceed-bottompoint"></div>
+                        </div>
+                    <div class="roadmap-content roadmap-proceed-bottomline">
+                            <img src="./assets/landing/roadmap/checked.png" alt=""/>
+                            <p>2</p>
+                            <div class="step-name-and-status">
+                                <span>Greenprint Crafting</span>
+                                <span style="color: #35FBBD;">Completed</span>
+                            </div>
+                            <div class="roadmap-proceed-bottompoint"></div>
+                    </div>
+                    <div class="roadmap-content roadmap-proceed-bottomline">
+                        <img src="./assets/landing/roadmap/checked.png" alt=""/>
+                        <p>3</p>
+                        <div class="step-name-and-status">
+                            <span>Leaderboards</span>
+                            <span style="color: #35FBBD;">Completed</span>
+                        </div>
+                        <div class="roadmap-proceed-bottompoint"></div>
+                    </div>
+                    <div class="roadmap-content roadmap-proceed-bottomline">
+                        <img src="./assets/landing/roadmap/checked.png" alt=""/>
+                        <p>4</p>
+                        <div class="step-name-and-status">
+                            <span>Greenprint Fusion</span>
+                            <span style="color: #35FBBD;">Completed</span>
+                        </div>
+                        <div class="roadmap-proceed-bottompoint"></div>
+                    </div>
+                </div>
+                <div class="roadmap-row">
+                    <div class="roadmap-content roadmap-proceed-bottomline">
+                            <img src="./assets/landing/roadmap/checked.png" alt=""/>
+                            <p>8</p>
+                            <div class="step-name-and-status">
+                                <span>Materials Foraging</span>
+                                <span style="color: #35FBBD;">Completed</span>
+                            </div>
+                            <div class="roadmap-proceed-bottompoint"></div>
+                        </div>
+                        <div class="roadmap-content roadmap-proceed-bottomline">
+                            <img src="./assets/landing/roadmap/checked.png" alt=""/>
+                            <p>7</p>
+                            <div class="step-name-and-status">
+                                <span>Loza Partner Staking</span>
+                                <span style="color: #35FBBD;">Completed</span>
+                            </div>
+                            <div class="roadmap-proceed-bottompoint"></div>
+                        </div>
+                        <div class="roadmap-content roadmap-proceed-bottomline">
+                            <img src="./assets/landing/roadmap/checked.png" alt=""/>
+                            <p>6</p>
+                            <div class="step-name-and-status">
+                                <span>Ascendant Orb Fusion</span>
+                                <span style="color: #35FBBD;">Completed</span>
+                            </div>
+                            <div class="roadmap-proceed-bottompoint"></div>
+                        </div>
+                        <div class="roadmap-content roadmap-proceed-bottomline">
+                            <img src="./assets/landing/roadmap/checked.png" alt=""/>
+                            <p>5</p>
+                            <div class="step-name-and-status">
+                                <span>Greenprint Boosting</span>
+                                <span style="color: #35FBBD;">Completed</span>
+                            </div>
+                            <div class="roadmap-proceed-bottompoint"></div>
+                            <div class="roadmap-proceed-rightline"></div>
+                        </div>
+                  </div>
+                <div class="roadmap-row">
+                    <div class="roadmap-content roadmap-proceed-bottomline">
+                        <div class="roadmap-proceed-leftline"></div>
+                            <img src="./assets/landing/roadmap/checked.png" alt=""/>
+                            <p>9</p>
+                            <div class="step-name-and-status">
+                                <span>2D Unity Mini Game</span>
+                                <span style="color: #35FBBD;">Completed</span>
+                            </div>
+                            <div class="roadmap-todo-bottompoint"></div>
+                            
+                        </div>
+                        <div class="roadmap-content roadmap-proceed-bottomline">
+                            <img class="roadmap-uncheckedimg" src="./assets/landing/roadmap/unchecked.png" alt=""/>
+                            <p>10</p>
+                            <div class="step-name-and-status">
+                                <span>Creek Partner Staking</span>
+                            </div>
+                            <div class="roadmap-todo-bottompoint"></div>
+                        </div>
+                        <div class="roadmap-content roadmap-proceed-bottomline">
+                            <img class="roadmap-uncheckedimg" src="./assets/landing/roadmap/unchecked.png"alt=""/>
+                            <p>11</p>
+                            <div class="step-name-and-status">
+                                <span>Component Crafting<br>Missions</span>
+                            </div>
+                            <div class="roadmap-todo-bottompoint"></div>
+                        </div>
+                        <div class="roadmap-content roadmap-proceed-bottomline">
+                            <img class="roadmap-uncheckedimg" src="./assets/landing/roadmap/unchecked.png" alt=""/>
+                            <p>12</p>
+                            <div class="step-name-and-status">
+                                <span>Armor Fusion</span>
+                            </div>
+                            <div class="roadmap-todo-bottompoint"></div>
+                        </div>
+                </div>                
+                <div class="roadmap-row">
+                    <div class="roadmap-content roadmap-proceed-bottomline">
+                            <img src="./assets/landing/roadmap/checked.png" alt=""/>
+                            <p>16</p>
+                            <div class="step-name-and-status">
+                                <span>Armor Upgrades</span>
+                            </div>
+                            <div class="roadmap-todo-bottompoint"></div>
+                        </div>
+                        <div class="roadmap-content roadmap-proceed-bottomline">
+                            <img class="roadmap-uncheckedimg" src="./assets/landing/roadmap/unchecked.png" alt=""/>
+                            <p>15</p>
+                            <div class="step-name-and-status">
+                                <span>Foraging Land Offering</span>
+                            </div>
+                            <div class="roadmap-todo-bottompoint"></div>
+                        </div>
+                        <div class="roadmap-content roadmap-proceed-bottomline">
+                            <img class="roadmap-uncheckedimg" src="./assets/landing/roadmap/unchecked.png" alt=""/>
+                            <p>14</p>
+                            <div class="step-name-and-status">
+                                <span>V1 Optimization Chip</span>
+                            </div>
+                            <div class="roadmap-todo-bottompoint"></div>
+                        </div>
+                        <div class="roadmap-content roadmap-proceed-bottomline">
+                            <img class="roadmap-uncheckedimg" src="./assets/landing/roadmap/unchecked.png" alt=""/>
+                            <p>13</p>
+                            <div class="step-name-and-status">
+                                <span>V1 Stats Chip</span>
+                            </div>
+                            <div class="roadmap-todo-bottompoint"></div>
+                            <div class="roadmap-proceed-rightline"></div>
+                        </div>
+                </div>     
+                <div class="roadmap-row">
+                    <div class="roadmap-content roadmap-todo-bottomline">
+                        <img class="roadmap-uncheckedimg" src="./assets/landing/roadmap/unchecked.png" alt=""/>
+                            <p>17</p>
+                            <div class="step-name-and-status">
+                                <span>Ultra Anima Unity Races</span>
+                            </div>
+                            <div class="roadmap-todo-leftline"></div>
+                            <div class="roadmap-todo-bottompoint"></div>
+
+                            <div class="roadmap-todo-pointpoint" style="right: -45px"></div>
+                            <div class="roadmap-todo-pointpoint" style="right: -60px"></div>
+                            <div class="roadmap-todo-pointpoint" style="right: -75px"></div>
+                            <div class="roadmap-todo-pointpoint" style="right: -90px"></div>
+                        </div>
+                </div>     
+            </div>
+           <!-- <div class="login-pannel">
+                <img src="./assets/landing/login/bg.png" alt="" >
+           </div> -->
+        </div>    
+    </section>    
+    <section class="landing-section" style="height: calc(100vh + 132px);" id="readynanotopia">
+        <div class="section-banner">
+            <div class="landing-section-banner1 banner-detail-adjust1">
+                <span class="section-banner-font">READY TO RULE NANOTOPIA</span>
+            </div>
+            <div class="landing-section-banner2 banner-detail-adjust2">
+                <img src="./assets/landing/common/titlebgdecorate1.svg" alt=""/>
+            </div>
+            <div class="landing-section-banner3 banner-detail-adjust3">
+                <img src="./assets/landing/common/titlebgdecorate1.svg" alt=""/>
+            </div>
+            <div class="landing-section-banner4 banner-detail-adjust4">
+                <img src="./assets/landing/common/titlebgdecorate.svg" alt=""/>
+            </div>
+            <div class="landing-section-banner5 banner-detail-adjust5">
+                <span class="section-title-font">READY TO RULE NANOTOPIA?</span>
+            </div>
+        
+           
+        </div>
+        <div class="section-container">
+            <div class="readyrule-container">
+                <span class="section-title-font-readyrule">Start Playing Green Rabbit Now!</span>
+                <div class="play-greenrabbit-button">
+                    <div class="button-style249">
+                        <p>PLAY GREEN RABBIT</p>
+                    </div>
+                </div>
+                <div class="readyrule-before-starting">
+                    <p class="readyrule-content-font1">NEED MORE INFO BEFORE STARTING?</p>
+                    <img src="./assets/landing/nanotopia/needmore.png"alt="">
+                </div>         
+                <div class="readyrule-quickguide">
+                    <div class="readyrule-quickguide-col">
+                        <p class="readyrule-quickguide-font">Master the first steps of the game<br>with our quick guide</p>
+                        <div class="button-style249">
+                            <p>SEE QUICK GUIDE</p>
+                        </div>
+                    </div>
+                    <div class="readyrule-quickguide-col">
+                        <p class="readyrule-quickguide-font">Read the complete<br>Green Rabbit Gameplay</p>
+                        <div class="button-style249">
+                            <p>COMPLETE GAMEPLAY</p>
+                        </div>
+                    </div>
+                </div>  
+                <div class="readyrule-bg2character">
+                    <div class="readyrule-doublecharacter">
+                        <img src="./assets/landing/readytorule/greenrabbit1.png" alt=""/>
+                    </div>
+                    <div class="readyrule-doublecharacter">
+                        <img src="./assets/landing/readytorule/greenrabbit2.png" alt=""/>
+                        <div class="readyrule-shadow-character">
+                            <img src="./assets/landing/readytorule/greenrabbit3.png" alt=""/>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="readyrule-character-select">
+                    <div class="readyrule-selected-cutimg">
+                        <img src="./assets/landing/readytorule/seltop.svg" style="position: absolute; top: 0px; left: 0px;" alt=""/>
+                        <img src="./assets/landing/readytorule/selbottom.svg" style="position: absolute; bottom: 0px; right: 0px;" alt=""/>
+                    </div>
+                </div> -->
+                <div class="readyrule-bottommask">
+                </div>
+
+           </div>
+        
+        </div>
+        
+    </section>
+    <section class="landing-footer" id="footer">
+        <div class="landing-footer-leftpart">
+            <p class="footer-font1">GREEN RABBIT HOLDINGS, LLC - 427 E. 17TH ST. F259, COSTA MESA, CA, 92627</p>
+            <p class="footer-font2">©2022 GREEN RABBIT HOLDINGS, LLC | ALL RIGHTS RESERVED  - All trademarks referenced herein are the properties of their respective owners</p>
+        </div>
+        <div class="landing-footer-rightpart">
+            <div class="url-iconlist">
+                <img class="twitter-img" src="./assets/landing/button/topicon1.svg" style="margin-left: 192px;" alt=""/>
+                <img class="twitter-img" src="./assets/landing/button/topicon2.svg" alt=""/>
+                <img class="twitter-img" src="./assets/landing/button/topicon3.svg" alt=""/>
+                <img class="twitter-img" src="./assets/landing/button/topicon4.svg" alt=""/>
+            </div>        
+            <br>
+            <p class="footer-font3">PRIVACY  |  TERMS OF USE  |  PARTNERSHIP PROGRAM</p>
+        </div>
+    </section>
+</div>    
+
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script>
+    const indicators = document.querySelectorAll(".indicator");
+    const sections = document.querySelectorAll("section");
+
+    const resetCurrentActiveIndicator = () => {
+    const activeIndicator = document.querySelector(".active");
+    if (activeIndicator)
+        activeIndicator.classList.remove("active");
+    };
+
+    const HideSidebar = ()=>{
+        const sidebar = document.querySelector("#sidebar");
+        if (sidebar){
+            sidebar.classList.remove('try-show-tag');
+            sidebar.classList.add("try-hidden-tag");
+        }
+    }
+
+    const ShowSidebar = ()=> {
+        const sidebar = document.querySelector("#sidebar");
+        if (sidebar){
+            sidebar.classList.remove("try-hidden-tag");
+            sidebar.classList.add('try-show-tag');        
+        }
+    }
+
+    const MakeOpacityZero = ()=>{
+        document.getElementsByName("aboutthegame")[0].setAttribute("style", "opacity: 0");
+        document.getElementsByName("overview")[0].setAttribute("style", "opacity: 0");
+        document.getElementsByName("aboutgreenrabbit")[0].setAttribute("style", "opacity: 0");
+        document.getElementsByName("roadmap")[0].setAttribute("style", "opacity: 0");
+        document.getElementsByName("readynanotopia")[0].setAttribute("style", "opacity: 0");
+    }
+    
+    function animateIt(sectionId){
+        let overview = document.getElementsByClassName('section-banner-font')[sectionId];
+        let overview_bg2 = document.getElementsByClassName('landing-section-banner2')[sectionId];
+        let overview_bg3 = document.getElementsByClassName('landing-section-banner3')[sectionId];
+        let overview_bg4 = document.getElementsByClassName('landing-section-banner4')[sectionId];
+        let overview_str = document.getElementsByClassName('landing-section-banner5')[sectionId];
+
+        overview.style.animation = 'unset';
+        overview_str.style.transform = 'unset';
+        overview_str.style.transition = 'unset';
+        overview_str.style.left = 'unset';
+
+        overview_bg2.style.transform = 'unset';
+        overview_bg2.style.transition = 'unset';
+        overview_bg3.style.transform = 'unset';
+        overview_bg3.style.transition = 'unset';
+        overview_bg4.style.transform = 'unset';
+        overview_bg4.style.transition = 'unset';
+        overview_bg2.style.animation = 'unset';
+        overview_bg3.style.animation = 'unset';
+        overview_bg4.style.animation = 'unset';
+        overview.getBoundingClientRect();
+        overview_str.getBoundingClientRect();
+        overview_bg2.getBoundingClientRect();
+        overview_bg3.getBoundingClientRect();
+        overview_bg4.getBoundingClientRect();
+        overview.style.animation = 'fadein 3s ease infinite ';
+        /* left: calc(50%); 
+        transform: translateX(-50%);*/
+        overview_str.setAttribute("style", "transition: transform 1700ms;  transform: translateX(calc(50vw - 50%)); ");
+        overview_bg2.setAttribute("style", "transition: transform 1500ms; transform: translateX(50vw)");
+        overview_bg3.setAttribute("style", "transition: transform 900ms; transition-delay: 300ms; transform: translateX(50vw)");
+        overview_bg4.setAttribute("style", "transition: transform 1200ms; transform: translateX(50vw)");
+        setTimeout(() => {
+            overview.style.animation = "none";
+        }, 3000);
+    }
+    
+    const onSectionLeavesViewport = (section) => {
+    const observer = new IntersectionObserver(
+        (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+            resetCurrentActiveIndicator();
+            const element = entry.target;
+            const indicator = document.querySelector(`a[href='#${element.id}']`);
+            if (element.id == "badge" || element.id == "footer")
+            {
+                HideSidebar();
+            }
+           else
+                ShowSidebar();   
+            if (indicator){
+                if (element.id == "aboutthegame")
+                    animateIt(0);
+                else if (element.id == "overview")
+                    animateIt(1);
+                else if (element.id == "aboutgreenrabbit")
+                    animateIt(2);
+                else if (element.id == "roadmap")
+                    animateIt(3);
+                else if (element.id == "readynanotopia")
+                    animateIt(4);
+
+                MakeOpacityZero();
+                const span_text = document.getElementsByName(element.id)[0];
+                if (span_text)
+                    span_text.setAttribute("style", "opacity: 0.9;");
+
+                indicator.classList.add("active");
+            }
+            return;
+            }
+        });
+        },
+        {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.75
+        }
+    );
+    observer.observe(section);
+    };
+
+    indicators.forEach((indicator) => {
+        indicator.addEventListener("click", function (event) {
+            event.preventDefault();
+            document
+            .querySelector(this.getAttribute("href"))
+            .scrollIntoView({ behavior: "smooth" });
+            resetCurrentActiveIndicator();
+            this.classList.add("active");
+        });
+    });
+    sections.forEach(onSectionLeavesViewport);
+    // const init = function () {
+    // };
+    // init();
+    $(document).ready(function () {
+        $('#nav li').first().addClass("active").find('div').show();
+        $('#nav li > a').first().css("opacity", 1);
+        $('#nav > li > a').click(function(){
+            $('#nav > li > a').css("opacity", 0.6);
+             $('#nav > li > group').css("opacity", 0);
+             if ($(this).attr('class') != 'active'){
+                $('#nav li div').slideUp();
+                $(this).next().slideToggle();
+                $('#nav li a').removeClass('active');
+                $(this).addClass('active');
+                $(this).css("opacity", 1);
+            }
+            else{
+                $(this).css("opacity", 1);                
+            }
+            $(this).parent().find('group').css( "opacity", "1" );
+            
+        });
+    });
+</script>
